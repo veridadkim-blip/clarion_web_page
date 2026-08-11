@@ -2,7 +2,8 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import CompanyOverview from './components/CompanyOverview'
 import BusinessArchitecture from './components/BusinessArchitecture'
-import RnDPatents from './components/RnDPatents'
+import CoreBusiness from './components/CoreBusiness'
+import GrowthTechnology from './components/GrowthTechnology'
 import HealthcareHighlight from './components/HealthcareHighlight'
 import Partners from './components/Partners'
 import B2BContact from './components/B2BContact'
@@ -15,29 +16,32 @@ export default function App() {
       <Header />
 
       <main>
-        {/* 1. Hero Section (Clarity Wave Canvas & Clear Decision Message) */}
+        {/* 1. CLARITY WAVE (Hero: 복잡한 기술을, 명확한 실행으로) */}
         <Hero />
 
-        {/* 2. Company Overview (About Clarion) */}
+        {/* 2. WHO WE ARE (Company Overview: AI · Data · Cloud Platform Company) */}
         <CompanyOverview />
 
-        {/* 3. Core Business Areas (Software, SI, AI Solutions, Big Data, Fintech, SaaS) */}
+        {/* 3. BUSINESS PORTFOLIO (Business Architecture: NOW → NEXT → FUTURE) */}
         <BusinessArchitecture />
 
-        {/* 4. Technology & R&D Orientation */}
-        <RnDPatents />
+        {/* 4. CORE BUSINESS (Core Business: 금융·보험 IT · SI · Cloud · Software) */}
+        <CoreBusiness />
 
-        {/* 5. Insurance-linked Non-Medical Healthcare Positioning */}
+        {/* 5. GROWTH TECHNOLOGY (Growth Technology: AI · Data · Platform · GovTech) */}
+        <GrowthTechnology />
+
+        {/* 6. HEALTHCARE INNOVATION (Healthcare Highlight: 한생AI · 비의료 웰니스 · 생활건강솔루션) */}
         <HealthcareHighlight />
 
-        {/* 6. Projects & Execution Capabilities */}
+        {/* 7. VERIFIED TRACK RECORD (Partners: 실제 프로젝트와 실행력) */}
         <Partners />
 
-        {/* 7. B2B Project & Consultation Contact */}
+        {/* 8. B2B CONTACT (B2B Project Consultation) */}
         <B2BContact />
       </main>
 
-      {/* Footer */}
+      {/* 9. FOOTER */}
       <Footer />
     </div>
   )

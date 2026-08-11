@@ -1,129 +1,139 @@
 import React, { useState } from 'react'
-import { Code, Building2, Cpu, Database, CreditCard, Layers, ArrowRight } from 'lucide-react'
+import { Building2, Cpu, HeartPulse, ArrowRight, Check } from 'lucide-react'
 
-const businessAreas = [
+const portfolioStories = [
   {
-    id: 'sw_dev',
-    icon: Code,
-    title: '소프트웨어 개발 및 공급',
-    subtitle: '맞춤형 시스템 & 응용 SW',
-    desc: '고객사의 업무 프로세스, 데이터 흐름, 보안 요건에 맞춘 소프트웨어 개발을 통해 운영 안정성과 효율성을 강화합니다.',
+    id: 'now',
+    num: '01',
+    phase: 'NOW',
+    category: 'CORE BUSINESS',
+    title: '현재 수행 기반 · 엔터프라이즈 IT & SI',
+    slogan: '현장에서 검증되는 높은 신뢰성과 실체 있는 실행력',
+    bgColor: 'bg-white border-2 border-[#1265E5]',
+    accentColor: 'text-[#1265E5]',
+    btnColor: 'bg-[#1265E5] text-white hover:bg-blue-600',
+    link: '#core-business',
+    keywords: ['Financial IT', 'System Integration', 'Cloud Architecture', 'Software Dev'],
+    desc: '금융·보험 및 대형 엔터프라이즈 환경에서 실제 시스템을 안정적으로 구축하고 유지보수하는 클라리온의 현재 핵심 사업 기반입니다.',
   },
   {
-    id: 'si',
-    icon: Building2,
-    title: '컴퓨터 프로그래밍 및 시스템 통합 (SI)',
-    subtitle: '통합 디지털 업무환경 구축',
-    desc: '기업 내부 시스템, 외부 서비스, 데이터베이스를 하나로 연결하여 데이터 단절 없는 최적의 아키텍처를 구축합니다.',
+    id: 'next',
+    num: '02',
+    phase: 'NEXT',
+    category: 'GROWTH TECHNOLOGY',
+    title: '성장 기술 · AI & Data Platform',
+    slogan: '현장의經驗을 지능형 기술 자산으로 전진',
+    bgColor: 'bg-gradient-to-br from-[#07152B] to-[#0B1F3A] text-white border border-white/20',
+    accentColor: 'text-[#37B7FF]',
+    btnColor: 'bg-[#37B7FF] text-[#07152B] font-extrabold hover:bg-cyan-300',
+    link: '#growth-technology',
+    keywords: ['AI Transformation', 'Data Intelligence', 'Automation SaaS', 'GovTech'],
+    desc: '금융·보험 IT 구축 현장에서 축적된 프로세스 노하우를 AI 모델 연동, 대용량 데이터 파이프라인 및 자동화 플랫폼으로 기술 고도화합니다.',
   },
   {
-    id: 'ai',
-    icon: Cpu,
-    title: '인공지능(AI) 기반 솔루션 개발',
-    subtitle: '업무 자동화 & 지능형 리포팅',
-    desc: 'AI 기술을 활용하여 데이터 분석, 예측, 자동화, 리포트 생성을 지원하는 실무형 지능형 서비스를 개발합니다.',
-  },
-  {
-    id: 'bigdata',
-    icon: Database,
-    title: '빅데이터 및 정보제공 서비스',
-    subtitle: '데이터 분석 & 통합 DB',
-    desc: '빅데이터 수집·처리·분석 프로세스를 구축하여 기업의 정확한 의사결정과 리스크 판단을 지원합니다.',
-  },
-  {
-    id: 'fintech',
-    icon: CreditCard,
-    title: '핀테크 및 결제 연계 시스템',
-    subtitle: '전자지급결제 & 정산 연동',
-    desc: '자체 플랫폼 내 결제, 정산, 포인트, 구독료 관리를 위한 안전한 전자지급결제 연계 아키텍처를 구축합니다.',
-  },
-  {
-    id: 'saas',
-    icon: Layers,
-    title: '플랫폼 및 구독형 서비스',
-    subtitle: '서비스형 비즈니스 (SaaS)',
-    desc: '용역 개발을 넘어 지속적인 가치를 제공하는 구독형 비즈니스 모델을 구축하여 장기 성장 기반을 다집니다.',
+    id: 'future',
+    num: '03',
+    phase: 'FUTURE',
+    category: 'HEALTHCARE INNOVATION',
+    title: '전략 신사업 · 비의료 웰니스',
+    slogan: '기술을 사람의 일상과 건강한 생활 경험에 연결',
+    bgColor: 'bg-gradient-to-br from-[#F4FDF9] to-[#E6F8F0] border border-emerald-500/40',
+    accentColor: 'text-emerald-700',
+    btnColor: 'bg-emerald-600 text-white hover:bg-emerald-700',
+    link: '#healthcare',
+    keywords: ['한생AI', '보험사 연계 웰니스', '생활건강 리포트', '생활건강PT · 태극권'],
+    desc: '금융·보험 파트너 네트워크와 AI 데이터 기술을 결합하여 질병 치료가 아닌 일상속 습관 관리 중심의 비의료 웰니스 플랫폼을 구현합니다.',
   },
 ]
 
 export default function BusinessArchitecture() {
-  const [activeId, setActiveId] = useState(businessAreas[0].id)
-  const currentArea = businessAreas.find((b) => b.id === activeId) || businessAreas[0]
+  const [activeTab, setActiveTab] = useState('now')
+  const currentStory = portfolioStories.find((s) => s.id === activeTab) || portfolioStories[0]
 
   return (
-    <section id="business" className="py-20 lg:py-28 bg-clarion-light border-b border-clarion-line">
+    <section id="portfolio" className="py-20 lg:py-28 bg-[#F8FAFC] border-b border-clarion-line">
       <div className="container-main space-y-12">
-        {/* Header */}
+        {/* Section Header */}
         <div className="max-w-3xl space-y-4">
-          <span className="section-label">BUSINESS AREAS</span>
-          <h2 className="section-title">
-            체계적인 <span className="text-clarion-blue">사업 영역</span>
+          <span className="inline-block px-3.5 py-1 bg-[#1265E5]/10 text-[#1265E5] font-mono font-bold text-xs tracking-wider uppercase rounded-full border border-[#1265E5]/20">
+            BUSINESS PORTFOLIO · SCROLL STORYTELLING
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#142033] leading-tight">
+            검증된 실행력에서, <br />
+            <span className="text-[#1265E5]">미래 기술로.</span>
           </h2>
-          <p className="section-desc">
-            안정적인 소프트웨어 개발과 시스템 통합 역량을 바탕으로
-            AI, 빅데이터, 플랫폼 비즈니스로 확장해 나갑니다.
+          <p className="text-base sm:text-lg text-[#68758A] font-normal leading-relaxed max-w-2xl">
+            NOW (현재 수행) → NEXT (성장 기술) → FUTURE (전략 신사업)으로 이어지는 클라리온의 시각적 스토리텔링입니다.
           </p>
         </div>
 
-        {/* Tab & Content Split */}
-        <div className="grid lg:grid-cols-12 gap-8 items-start">
-          {/* Left Area List */}
-          <div className="lg:col-span-5 space-y-2.5">
-            {businessAreas.map((item) => {
-              const Icon = item.icon
-              const isActive = activeId === item.id
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => setActiveId(item.id)}
-                  className={`w-full text-left p-4.5 rounded-xl border transition-all duration-200 flex items-center gap-4 ${
-                    isActive
-                      ? 'bg-clarion-blue text-white border-clarion-blue shadow-md'
-                      : 'bg-white text-clarion-text border-clarion-line/70 hover:border-clarion-blue/40'
-                  }`}
-                >
-                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${
-                    isActive ? 'bg-white/20 text-white' : 'bg-clarion-blue/10 text-clarion-blue'
-                  }`}>
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-mono font-semibold opacity-80">{item.subtitle}</div>
-                    <div className="text-sm font-bold leading-tight">{item.title}</div>
-                  </div>
-                </button>
-              )
-            })}
+        {/* Phase Timeline Tabs (NOW -> NEXT -> FUTURE) */}
+        <div className="grid grid-cols-3 gap-3 bg-white p-2 rounded-2xl border border-clarion-line/80 shadow-xs max-w-3xl">
+          {portfolioStories.map((s) => (
+            <button
+              key={s.id}
+              onClick={() => setActiveTab(s.id)}
+              className={`py-3.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-2 ${
+                activeTab === s.id
+                  ? 'bg-[#07152B] text-white shadow-md'
+                  : 'text-[#68758A] hover:bg-slate-100 hover:text-[#142033]'
+              }`}
+            >
+              <span className="font-mono text-xs opacity-75">{s.num}</span>
+              <span>{s.phase}</span>
+            </button>
+          ))}
+        </div>
+
+        {/* Dynamic Storytelling Stage Container */}
+        <div className={`p-8 sm:p-12 rounded-3xl transition-all duration-500 shadow-xl space-y-8 ${currentStory.bgColor}`}>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-current/15 pb-6">
+            <div className="flex items-center gap-3">
+              <span className="text-3xl font-mono font-extrabold opacity-80">{currentStory.num}</span>
+              <div>
+                <span className={`text-xs font-mono font-extrabold tracking-widest uppercase ${currentStory.accentColor}`}>
+                  {currentStory.phase} · {currentStory.category}
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-extrabold pt-0.5">{currentStory.title}</h3>
+              </div>
+            </div>
+            <span className="text-xs font-mono font-bold px-3.5 py-1.5 rounded-full border border-current/20 self-start sm:self-auto">
+              PHASE {currentStory.num}
+            </span>
           </div>
 
-          {/* Right Selected Box */}
-          <div className="lg:col-span-7 bg-white p-8 lg:p-10 rounded-2xl border border-clarion-line space-y-6 shadow-sm">
-            <div className="w-14 h-14 rounded-2xl bg-clarion-blue/10 text-clarion-blue flex items-center justify-center">
-              <currentArea.icon className="w-7 h-7" />
-            </div>
-
-            <div className="space-y-2">
-              <span className="text-xs font-mono font-semibold text-clarion-cyan bg-clarion-navy px-3 py-1 rounded-md">
-                {currentArea.subtitle}
-              </span>
-              <h3 className="text-2xl font-bold text-clarion-text pt-1">
-                {currentArea.title}
-              </h3>
-            </div>
-
-            <p className="text-clarion-muted text-base leading-relaxed font-normal">
-              {currentArea.desc}
+          {/* Slogan & Description */}
+          <div className="space-y-3 max-w-3xl">
+            <h4 className={`text-xl sm:text-2xl font-bold ${currentStory.accentColor}`}>
+              "{currentStory.slogan}"
+            </h4>
+            <p className="text-sm sm:text-base opacity-90 leading-relaxed font-normal">
+              {currentStory.desc}
             </p>
+          </div>
 
-            <div className="pt-4 border-t border-clarion-line">
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 text-clarion-blue font-bold text-sm hover:underline"
-              >
-                <span>사업 관련 문의하기</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
+          {/* 4 Core Keywords (No heavy paragraphs, concise keywords!) */}
+          <div className="space-y-2 pt-2">
+            <span className="text-xs font-mono font-bold opacity-75 uppercase tracking-wider">KEY FOCUS AREAS</span>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {currentStory.keywords.map((kw) => (
+                <div key={kw} className="bg-current/10 p-3.5 rounded-xl border border-current/20 text-xs font-bold flex items-center gap-2">
+                  <Check className="w-4 h-4 shrink-0" />
+                  <span>{kw}</span>
+                </div>
+              ))}
             </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="pt-4 flex justify-end">
+            <a
+              href={currentStory.link}
+              className={`inline-flex items-center gap-2.5 px-7 py-3.5 text-sm font-bold rounded-xl shadow-md transition-all duration-200 hover:-translate-y-0.5 ${currentStory.btnColor}`}
+            >
+              <span>상세 섹션으로 이동</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </div>
