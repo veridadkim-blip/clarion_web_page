@@ -8,11 +8,11 @@ export default function Footer() {
       <div className="container-main space-y-6 text-center sm:text-left">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-white/10 pb-6">
           <div className="space-y-1">
-            <span className="text-xl font-bold font-mono tracking-wider text-white">
-              ㈜클라리온
+            <span className="text-2xl font-extrabold font-mono tracking-wider text-white">
+              CLARION
             </span>
-            <p className="text-xs font-mono text-[#37B7FF]">
-              AI · Data · Cloud Platform Company
+            <p className="text-xs font-mono text-[#37B7FF] font-semibold">
+              AI · Data · Cloud Platform Company · ㈜클라리온
             </p>
           </div>
           <p className="text-xs text-white/70 font-mono">
@@ -21,8 +21,8 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/70">
-          <p>회사 상세정보는 준비 중입니다.</p>
-          <div className="flex items-center gap-4 text-white/60">
+          <p className="font-sans">Technology for People. Growth with Responsibility.</p>
+          <div className="flex items-center gap-4 text-white/60 font-medium">
             <span>개인정보처리방침</span>
             <span>·</span>
             <span>이용약관</span>
@@ -32,3 +32,4 @@ export default function Footer() {
     </footer>
   )
 }
+
