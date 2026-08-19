@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { Menu, X, ArrowRight } from 'lucide-react'
 
 const navLinks = [
-  { label: 'WHO WE ARE', href: '#about' },
-  { label: '포트폴리오', href: '#portfolio' },
+  { label: '회사소개', href: '#about' },
+  { label: '사업 포트폴리오', href: '#portfolio' },
   { label: 'Core Business', href: '#core-business' },
   { label: 'Growth Tech', href: '#growth-technology' },
   { label: 'Healthcare AI', href: '#healthcare' },
-  { label: 'Track Record', href: '#track-record' },
+  { label: '프로젝트', href: '#track-record' },
   { label: '문의하기', href: '#contact' },
 ]
 
@@ -17,7 +17,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40)
+      setIsScrolled(window.scrollY > 30)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
@@ -34,7 +34,7 @@ export default function Header() {
     >
       <div className="container-main">
         <nav className="flex items-center justify-between" aria-label="메인 네비게이션">
-          {/* Logo: CLARION English Wordmark (Dynamic Color Contrast) */}
+          {/* Logo: CLARION English Wordmark with dynamic high contrast */}
           <a
             href="#"
             className="flex items-center gap-2 group focus:outline-none focus:ring-2 focus:ring-clarion-blue/50 rounded-lg p-1"
@@ -50,12 +50,12 @@ export default function Header() {
           </a>
 
           {/* Desktop Nav Links */}
-          <ul className="hidden lg:flex items-center gap-6">
+          <ul className="hidden lg:flex items-center gap-7">
             {navLinks.map((link) => (
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className={`text-xs sm:text-sm font-semibold transition-colors duration-200 py-1 focus:outline-none focus:ring-2 focus:ring-clarion-blue/50 rounded ${
+                  className={`text-sm font-bold tracking-tight transition-colors duration-200 py-1 focus:outline-none focus:ring-2 focus:ring-clarion-blue/50 rounded ${
                     isScrolled
                       ? 'text-[#142033] hover:text-[#1265E5]'
                       : 'text-white/90 hover:text-white'
@@ -67,18 +67,18 @@ export default function Header() {
             ))}
           </ul>
 
-          {/* Right Action Button */}
+          {/* Right Action CTA */}
           <div className="hidden lg:flex items-center gap-4">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-4.5 py-2.5 bg-[#1265E5] text-white text-xs font-bold rounded-xl shadow-md transition-all duration-200 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-clarion-blue/50"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1265E5] text-white text-xs font-bold rounded-xl shadow-md transition-all duration-200 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-clarion-blue/50"
             >
-              <span>문의하기</span>
+              <span>프로젝트 문의하기</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMobileOpen(!isMobileOpen)}
             className={`lg:hidden p-2 rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-clarion-blue/50 ${
@@ -92,10 +92,10 @@ export default function Header() {
         </nav>
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile Menu Dropdown */}
       {isMobileOpen && (
         <div
-          className={`lg:hidden border-t border-clarion-line/20 mt-3 px-4 py-5 space-y-2 shadow-xl ${
+          className={`lg:hidden border-t border-clarion-line/20 mt-3 px-5 py-6 space-y-2.5 shadow-2xl ${
             isScrolled ? 'bg-white text-[#142033]' : 'bg-[#07152B] text-white'
           }`}
         >
@@ -104,7 +104,7 @@ export default function Header() {
               key={link.label}
               href={link.href}
               onClick={() => setIsMobileOpen(false)}
-              className={`block px-4 py-3 font-semibold rounded-xl transition-colors ${
+              className={`block px-4 py-3 text-base font-bold rounded-xl transition-colors ${
                 isScrolled
                   ? 'text-[#142033] hover:bg-slate-100 hover:text-[#1265E5]'
                   : 'text-white/90 hover:bg-white/10 hover:text-white'
@@ -116,12 +116,13 @@ export default function Header() {
           <a
             href="#contact"
             onClick={() => setIsMobileOpen(false)}
-            className="block text-center mt-3 px-4 py-3 bg-[#1265E5] text-white font-bold rounded-xl"
+            className="block text-center mt-4 px-4 py-3.5 bg-[#1265E5] text-white font-bold rounded-xl shadow-md"
           >
-            문의하기
+            프로젝트 문의하기
           </a>
         </div>
       )}
     </header>
   )
 }
+
