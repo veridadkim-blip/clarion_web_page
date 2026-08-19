@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ArrowRight, Check } from 'lucide-react'
+import { ArrowRight, Check, Sparkles } from 'lucide-react'
 
 const portfolioStories = [
   {
@@ -11,6 +11,7 @@ const portfolioStories = [
     slogan: '현장에서 검증되는 높은 신뢰성과 실체 있는 실행력',
     bgColor: 'bg-white border-2 border-[#1265E5] text-[#142033]',
     accentColor: 'text-[#1265E5]',
+    badgeBg: 'bg-[#1265E5] text-white',
     btnColor: 'bg-[#1265E5] text-white hover:bg-blue-600',
     link: '#core-business',
     keywords: ['Enterprise IT & SI', 'Financial IT', 'Cloud Integration', 'Software Development'],
@@ -23,8 +24,9 @@ const portfolioStories = [
     category: 'GROWTH TECHNOLOGY',
     title: '성장 기술 · AI & Data Platform',
     slogan: '현장의 노하우를 지능형 기술 자산으로 전환',
-    bgColor: 'bg-gradient-to-br from-[#07152B] to-[#0B1F3A] text-white border border-white/20',
+    bgColor: 'bg-gradient-to-br from-[#07152B] via-[#0B1F3A] to-[#050D1A] text-white border border-white/20',
     accentColor: 'text-[#37B7FF]',
+    badgeBg: 'bg-[#37B7FF] text-[#07152B]',
     btnColor: 'bg-[#37B7FF] text-[#07152B] font-extrabold hover:bg-cyan-300',
     link: '#growth-technology',
     keywords: ['AI Transformation', 'Data Intelligence', 'Platform & Automation', 'GovTech'],
@@ -37,8 +39,9 @@ const portfolioStories = [
     category: 'HEALTHCARE INNOVATION',
     title: '전략 신사업 · 비의료 웰니스 & Healthcare AI',
     slogan: '딥테크 기술을 사람의 건강한 일상 경험과 삶에 연결',
-    bgColor: 'bg-gradient-to-br from-[#F4FDF9] to-[#E6F8F0] text-[#142033] border border-emerald-500/40',
+    bgColor: 'bg-gradient-to-br from-[#F4FDF9] via-[#E6F8F0] to-[#D5F2E5] text-[#142033] border border-emerald-500/40',
     accentColor: 'text-emerald-700',
+    badgeBg: 'bg-emerald-600 text-white',
     btnColor: 'bg-emerald-600 text-white hover:bg-emerald-700',
     link: '#healthcare',
     keywords: ['Healthcare AI (한생AI)', '보험사 연계 웰니스', '생활건강솔루션', '생활건강PT · 태극권'],
@@ -51,31 +54,28 @@ export default function BusinessArchitecture() {
   const currentStory = portfolioStories.find((s) => s.id === activeTab) || portfolioStories[0]
 
   return (
-    <section id="portfolio" className="py-20 lg:py-28 bg-[#F8FAFC] border-b border-clarion-line">
+    <section id="portfolio" className="py-24 lg:py-32 bg-[#F8FAFC] border-b border-clarion-line transition-colors duration-700">
       <div className="container-main space-y-12">
         {/* Section Header */}
         <div className="max-w-3xl space-y-4">
           <span className="inline-block px-3.5 py-1 bg-[#1265E5]/10 text-[#1265E5] font-mono font-bold text-xs tracking-wider uppercase rounded-full border border-[#1265E5]/20">
-            CLARION BUSINESS PORTFOLIO
+            CLARION BUSINESS PORTFOLIO · SCROLL STORYTELLING
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#142033] leading-tight">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#142033] leading-tight tracking-tight">
             검증된 실행력에서, <br />
             <span className="text-[#1265E5]">미래 기술로.</span>
           </h2>
-          <p className="text-base sm:text-lg text-[#68758A] font-normal leading-relaxed max-w-2xl">
-            NOW (현재 수행) → NEXT (성장 기술) → FUTURE (전략 신사업)로 연결되는 클라리온의 지속 가능한 발전 방향을 제시합니다.
-          </p>
         </div>
 
-        {/* Phase Timeline Tabs (NOW -> NEXT -> FUTURE) */}
-        <div className="grid grid-cols-3 gap-3 bg-white p-2 rounded-2xl border border-clarion-line/80 shadow-xs max-w-3xl">
+        {/* Phase Storytelling Navigation Tabs (NOW -> NEXT -> FUTURE) */}
+        <div className="grid grid-cols-3 gap-3 bg-white p-2 rounded-2xl border border-clarion-line/80 shadow-sm max-w-2xl">
           {portfolioStories.map((s) => (
             <button
               key={s.id}
               onClick={() => setActiveTab(s.id)}
-              className={`py-3.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-2 ${
+              className={`py-4 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all duration-300 flex items-center justify-center gap-2 ${
                 activeTab === s.id
-                  ? 'bg-[#07152B] text-white shadow-md'
+                  ? 'bg-[#07152B] text-white shadow-lg scale-102'
                   : 'text-[#68758A] hover:bg-slate-100 hover:text-[#142033]'
               }`}
             >
@@ -85,39 +85,40 @@ export default function BusinessArchitecture() {
           ))}
         </div>
 
-        {/* Dynamic Storytelling Stage Container */}
-        <div className={`p-8 sm:p-12 rounded-3xl transition-all duration-500 shadow-xl space-y-8 ${currentStory.bgColor}`}>
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-current/15 pb-6">
-            <div className="flex items-center gap-4">
-              <span className="text-4xl font-mono font-extrabold opacity-80">{currentStory.num}</span>
+        {/* Dynamic Storytelling Stage Canvas Container */}
+        <div className={`p-8 sm:p-14 rounded-3xl transition-all duration-700 shadow-2xl space-y-10 relative overflow-hidden ${currentStory.bgColor}`}>
+          
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-current/15 pb-8">
+            <div className="flex items-center gap-5">
+              <span className="text-5xl font-mono font-extrabold opacity-80">{currentStory.num}</span>
               <div>
                 <span className={`text-xs font-mono font-extrabold tracking-widest uppercase ${currentStory.accentColor}`}>
                   {currentStory.phase} · {currentStory.category}
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-extrabold pt-0.5">{currentStory.title}</h3>
+                <h3 className="text-2xl sm:text-4xl font-extrabold pt-1">{currentStory.title}</h3>
               </div>
             </div>
-            <span className="text-xs font-mono font-bold px-4 py-1.5 rounded-full border border-current/20 self-start sm:self-auto uppercase">
+            <span className={`text-xs font-mono font-bold px-4 py-1.5 rounded-full uppercase ${currentStory.badgeBg}`}>
               PHASE {currentStory.num}
             </span>
           </div>
 
-          {/* Slogan & Description */}
-          <div className="space-y-3 max-w-3xl">
-            <h4 className={`text-xl sm:text-2xl font-bold ${currentStory.accentColor}`}>
+          {/* Large Editorial Statement */}
+          <div className="space-y-4 max-w-4xl">
+            <h4 className={`text-2xl sm:text-3xl font-extrabold leading-snug ${currentStory.accentColor}`}>
               "{currentStory.slogan}"
             </h4>
-            <p className="text-sm sm:text-base opacity-90 leading-relaxed font-normal">
+            <p className="text-base sm:text-lg opacity-90 leading-relaxed font-normal">
               {currentStory.desc}
             </p>
           </div>
 
-          {/* Core Keywords Grid */}
-          <div className="space-y-2 pt-2">
-            <span className="text-xs font-mono font-bold opacity-75 uppercase tracking-wider">KEY DOMAINS</span>
+          {/* Key Focus Domains Grid */}
+          <div className="space-y-3 pt-2">
+            <span className="text-xs font-mono font-bold opacity-75 uppercase tracking-wider">CORE DOMAINS</span>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {currentStory.keywords.map((kw) => (
-                <div key={kw} className="bg-current/10 p-3.5 rounded-xl border border-current/20 text-xs font-bold flex items-center gap-2">
+                <div key={kw} className="bg-current/10 p-4 rounded-xl border border-current/20 text-xs font-bold flex items-center gap-2">
                   <Check className="w-4 h-4 shrink-0" />
                   <span>{kw}</span>
                 </div>
@@ -125,11 +126,11 @@ export default function BusinessArchitecture() {
             </div>
           </div>
 
-          {/* CTA Link */}
+          {/* Action Link */}
           <div className="pt-4 flex justify-end">
             <a
               href={currentStory.link}
-              className={`inline-flex items-center gap-2.5 px-7 py-3.5 text-sm font-bold rounded-xl shadow-md transition-all duration-200 hover:-translate-y-0.5 ${currentStory.btnColor}`}
+              className={`inline-flex items-center gap-3 px-8 py-4 text-sm font-bold rounded-xl shadow-lg transition-all duration-200 hover:-translate-y-0.5 ${currentStory.btnColor}`}
             >
               <span>상세 영역 보기</span>
               <ArrowRight className="w-4 h-4" />
@@ -140,4 +141,5 @@ export default function BusinessArchitecture() {
     </section>
   )
 }
+
 

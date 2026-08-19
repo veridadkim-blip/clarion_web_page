@@ -2,40 +2,36 @@ import React from 'react'
 import { Quote, ArrowRight, ShieldCheck } from 'lucide-react'
 
 const visualPhilosophySteps = [
-  { step: '01', title: 'TECHNOLOGY', kor: '사람을 향한 기술', desc: '기업의 복잡한 문제를 해결하고 미래로 전진하는 지능형 기술 인프라' },
-  { step: '02', title: 'CLARITY', kor: '명확한 판단과 실행', desc: '복잡성을 정돈하고 사람과 조직이 더 쉽고 정확하게 의사결정하도록 지원' },
-  { step: '03', title: 'RESPONSIBILITY', kor: '책임 있는 성장', desc: '맡겨진 기술과 자원을 책임 있게 사용하여 사회와 사람에게 더 나은 가치 창출' },
-  { step: '04', title: 'PEOPLE', kor: '사람 중심의 가치', desc: '기술 그 자체보다 사람의 일상과 삶에 남기는 긍정적인 변화와 결실 최우선' },
+  { step: '01', title: 'TECHNOLOGY', kor: '사람을 향한 기술', desc: '기업의 복잡성을 해결하는 기술 인프라' },
+  { step: '02', title: 'CLARITY', kor: '명확한 판단과 실행', desc: '조직이 쉽고 정확하게 판단하도록 지원' },
+  { step: '03', title: 'RESPONSIBILITY', kor: '책임 있는 성장', desc: '사회와 사람에게 더 나은 가치 창출' },
+  { step: '04', title: 'PEOPLE', kor: '사람 중심의 가치', desc: '사람의 삶에 남기는 긍정적 변화 최우선' },
 ]
 
 export default function CompanyOverview() {
   return (
-    <section id="about" className="py-20 lg:py-28 bg-white border-b border-clarion-line">
+    <section id="about" className="py-24 lg:py-32 bg-white border-b border-clarion-line">
       <div className="container-main space-y-16">
         
         {/* Top Section Label */}
-        <div className="max-w-3xl space-y-3">
+        <div className="max-w-3xl space-y-2">
           <span className="inline-block px-3.5 py-1 bg-[#1265E5]/10 text-[#1265E5] font-mono font-bold text-xs tracking-wider uppercase rounded-full border border-[#1265E5]/20">
             ABOUT CLARION · CEO PHILOSOPHY
           </span>
-          <p className="text-xs font-mono text-[#68758A] font-semibold tracking-widest uppercase">
-            WHO WE ARE & WHAT WE BELIEVE
-          </p>
         </div>
 
-        {/* CEO Editorial Layout: Desktop CEO Photo 40-45% / Text 55-60% */}
+        {/* CEO Editorial Hero Layout: Desktop CEO Photo 45% / Editorial Text & Quote 55% */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* LEFT: Large Editorial Portrait Image */}
+          {/* LEFT: Editorial CEO Portrait Image */}
           <div className="lg:col-span-5 relative group">
-            {/* Ambient Background Glow Accent */}
             <div className="absolute -inset-4 bg-gradient-to-tr from-[#1265E5]/20 via-[#37B7FF]/15 to-transparent rounded-3xl blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-clarion-line bg-[#07152B]">
               <img
                 src="/images/ceo-portrait.jpg"
                 alt="㈜클라리온 대표이사 김동욱"
-                className="w-full h-auto max-h-[600px] object-cover object-top transition-transform duration-700 hover:scale-102"
+                className="w-full h-auto max-h-[620px] object-cover object-top transition-transform duration-700 hover:scale-102"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#07152B]/85 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
@@ -47,12 +43,12 @@ export default function CompanyOverview() {
             </div>
           </div>
 
-          {/* RIGHT: Corporate Philosophy & CEO Message Text */}
-          <div className="lg:col-span-7 space-y-7 text-left">
+          {/* RIGHT: High-Impact Typography & CEO Quote */}
+          <div className="lg:col-span-7 space-y-8 text-left">
             
-            {/* 1. Main Core Philosophy (Huge Editorial Typography) */}
+            {/* 1. Main Core Philosophy (Huge Typography as Hero) */}
             <div className="space-y-3 border-b border-clarion-line/80 pb-6">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#142033] leading-[1.2] tracking-tight">
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#142033] leading-[1.15] tracking-tight">
                 사람을 이롭게 하는 기술,
                 <br />
                 <span className="text-[#1265E5]">책임 있게 성장하는 기업.</span>
@@ -62,31 +58,27 @@ export default function CompanyOverview() {
               </p>
             </div>
 
-            {/* 2. Highlighted CEO Quote */}
-            <div className="bg-[#F8FAFC] p-6 sm:p-7 rounded-2xl border-l-4 border-[#1265E5] space-y-2 shadow-xs">
+            {/* 2. CEO Hero Quote (Massive Visual Focus) */}
+            <div className="bg-[#F8FAFC] p-7 sm:p-8 rounded-2xl border-l-4 border-[#1265E5] space-y-2 shadow-xs">
               <div className="flex items-center gap-2 text-[#1265E5]">
                 <Quote className="w-5 h-5 shrink-0" />
                 <span className="text-xs font-mono font-bold uppercase tracking-wider">LEADERSHIP QUOTE</span>
               </div>
-              <p className="text-lg sm:text-2xl font-bold text-[#142033] leading-snug">
+              <p className="text-xl sm:text-3xl font-extrabold text-[#142033] leading-snug">
                 “우리가 만드는 기술은 결국 누구를 향하고 있는가.”
               </p>
             </div>
 
-            {/* 3. CEO Message Text */}
-            <div className="space-y-4 text-sm sm:text-base text-[#475569] font-normal leading-relaxed">
+            {/* 3. Concise CEO Message Text (30-40% Compressed for Visual-first Impact) */}
+            <div className="space-y-3 text-base text-[#475569] font-normal leading-relaxed">
               <p>
-                제품보다 시스템을, 시스템보다 사람을, 그리고 사람을 움직이는 가치와 방향을 중요하게 생각합니다.
-                기업은 우리에게 맡겨진 기술과 자원을 책임 있게 사용하여 사람과 사회에 더 나은 가치를 만들어 가야 한다고 믿습니다.
-              </p>
-              <p>
-                AI와 디지털 기술이 빠르게 발전할수록 기술 그 자체보다 그것이 사람의 삶에 어떤 변화를 남기는지가 중요합니다.
-                클라리온은 복잡한 문제를 더 명확하게 만들고, 사람과 조직이 더 나은 판단과 실행을 할 수 있도록 돕겠습니다.
+                제품보다 사람을, 그리고 사람을 움직이는 가치와 방향을 중요하게 생각합니다.
+                클라리온은 복잡한 문제를 더 명확하게 다듬어 조직과 사회가 더 나은 판단과 실행을 하도록 돕겠습니다.
               </p>
             </div>
 
             {/* 4. Signature */}
-            <div className="pt-4 flex items-center justify-between border-t border-clarion-line/60">
+            <div className="pt-3 flex items-center justify-between border-t border-clarion-line/60">
               <div className="space-y-0.5">
                 <p className="text-xs text-[#68758A] font-mono uppercase">CLARION CO., LTD.</p>
                 <p className="text-xl font-extrabold text-[#142033]">대표이사 김동욱</p>
@@ -100,24 +92,18 @@ export default function CompanyOverview() {
           </div>
         </div>
 
-        {/* Visual Philosophy Minimal Diagram (TECHNOLOGY -> CLARITY -> RESPONSIBILITY -> PEOPLE) */}
+        {/* Visual Philosophy Minimal Flow Diagram */}
         <div className="bg-[#F8FAFC] p-8 lg:p-10 rounded-3xl border border-clarion-line/80 shadow-sm space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-clarion-line/60 pb-4">
-            <div className="space-y-1">
-              <span className="text-xs font-mono font-bold text-[#1265E5] uppercase tracking-wider">VISUAL PHILOSOPHY DIAGRAM</span>
-              <h3 className="text-lg sm:text-xl font-bold text-[#142033]">클라리온 핵심 가치 체계</h3>
-            </div>
-            <span className="text-xs font-mono text-[#68758A] bg-white px-3.5 py-1 rounded-md border border-clarion-line/60">
-              VALUE CHAIN FLOW
-            </span>
+          <div className="flex items-center justify-between border-b border-clarion-line/60 pb-4">
+            <span className="text-xs font-mono font-bold text-[#1265E5] uppercase tracking-wider">VALUE CHAIN FLOW</span>
+            <span className="text-xs font-mono text-[#68758A]">TECHNOLOGY → PEOPLE</span>
           </div>
 
-          {/* 4 Steps Minimal Flow */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {visualPhilosophySteps.map((item, idx) => (
               <div
                 key={item.title}
-                className="bg-white p-5 rounded-2xl border border-clarion-line/80 shadow-xs space-y-2 hover:border-[#1265E5]/40 transition-all duration-200 relative group"
+                className="bg-white p-5 rounded-2xl border border-clarion-line/80 shadow-xs space-y-2 hover:border-[#1265E5]/40 transition-all duration-200 relative"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-mono font-extrabold text-[#1265E5] bg-[#1265E5]/10 px-2 py-0.5 rounded">
@@ -143,4 +129,5 @@ export default function CompanyOverview() {
     </section>
   )
 }
+
 
