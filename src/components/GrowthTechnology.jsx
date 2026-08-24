@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Cpu, Database, Network, Building, Sparkles, Zap } from 'lucide-react'
+import { Cpu, Database, Network, Building, Sparkles, Zap, ArrowRight } from 'lucide-react'
+
 
 const growthDomains = [
   { id: 'ait', title: 'AI Transformation', sub: '실무형 AI 모델 연동', icon: Cpu },

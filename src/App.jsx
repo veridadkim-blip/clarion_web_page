@@ -31,15 +31,16 @@ export default function App() {
         {/* 5. GROWTH TECHNOLOGY (Growth Technology: AI · Data · Platform · GovTech) */}
         <GrowthTechnology />
 
-        {/* 6. HEALTHCARE INNOVATION (Healthcare Highlight: 한생AI · 비의료 웰니스 · 생활건강솔루션) */}
-        <HealthcareHighlight />
-
-        {/* 7. VERIFIED TRACK RECORD (Partners: 실제 프로젝트와 실행력) */}
+        {/* 6. PROJECT EXPERIENCE & R&D/IP (Partners: 실제 프로젝트와 검증된 실행력, 기업부설연구소, 특허출원) */}
         <Partners />
+
+        {/* 7. HEALTHCARE INNOVATION (Healthcare Highlight: 한생AI · 비의료 웰니스 · 생활건강솔루션) */}
+        <HealthcareHighlight />
 
         {/* 8. B2B CONTACT (B2B Project Consultation) */}
         <B2BContact />
       </main>
+
 
       {/* 9. FOOTER */}
       <Footer />
