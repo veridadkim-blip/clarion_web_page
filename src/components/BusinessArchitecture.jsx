@@ -54,28 +54,29 @@ export default function BusinessArchitecture() {
   const currentStory = portfolioStories.find((s) => s.id === activeTab) || portfolioStories[0]
 
   return (
-    <section id="portfolio" className="py-24 lg:py-32 bg-[#F8FAFC] border-b border-clarion-line transition-colors duration-700">
-      <div className="container-main space-y-12">
+    <section id="portfolio" className="lg:min-h-[calc(100vh-80px)] flex flex-col justify-center py-16 lg:py-24 bg-[#F8FAFC] border-b border-clarion-line transition-colors duration-700">
+      <div className="container-main space-y-8 lg:space-y-10 my-auto">
+
         {/* Section Header */}
-        <div className="max-w-3xl space-y-4">
+        <div className="max-w-3xl space-y-2">
           <span className="inline-block px-3.5 py-1 bg-[#1265E5]/10 text-[#1265E5] font-mono font-bold text-xs tracking-wider uppercase rounded-full border border-[#1265E5]/20">
             CLARION BUSINESS PORTFOLIO · SCROLL STORYTELLING
           </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#142033] leading-tight tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#142033] leading-tight tracking-tight">
             검증된 실행력에서, <br />
             <span className="text-[#1265E5]">미래 기술로.</span>
           </h2>
         </div>
 
         {/* Phase Storytelling Navigation Tabs (NOW -> NEXT -> FUTURE) */}
-        <div className="grid grid-cols-3 gap-3 bg-white p-2 rounded-2xl border border-clarion-line/80 shadow-sm max-w-2xl">
+        <div className="grid grid-cols-3 gap-2 bg-white p-1.5 rounded-2xl border border-clarion-line/80 shadow-sm max-w-xl">
           {portfolioStories.map((s) => (
             <button
               key={s.id}
               onClick={() => setActiveTab(s.id)}
-              className={`py-4 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all duration-300 flex items-center justify-center gap-2 ${
+              className={`py-2.5 px-3 rounded-xl text-xs sm:text-sm font-extrabold transition-all duration-300 flex items-center justify-center gap-1.5 ${
                 activeTab === s.id
-                  ? 'bg-[#07152B] text-white shadow-lg scale-102'
+                  ? 'bg-[#07152B] text-white shadow-md scale-101'
                   : 'text-[#68758A] hover:bg-slate-100 hover:text-[#142033]'
               }`}
             >
@@ -86,51 +87,51 @@ export default function BusinessArchitecture() {
         </div>
 
         {/* Dynamic Storytelling Stage Canvas Container */}
-        <div className={`p-8 sm:p-14 rounded-3xl transition-all duration-700 shadow-2xl space-y-10 relative overflow-hidden ${currentStory.bgColor}`}>
+        <div className={`p-6 sm:p-8 lg:p-10 rounded-3xl transition-all duration-700 shadow-xl space-y-6 relative overflow-hidden ${currentStory.bgColor}`}>
           
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-current/15 pb-8">
-            <div className="flex items-center gap-5">
-              <span className="text-5xl font-mono font-extrabold opacity-80">{currentStory.num}</span>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-current/15 pb-5">
+            <div className="flex items-center gap-4">
+              <span className="text-4xl font-mono font-extrabold opacity-80">{currentStory.num}</span>
               <div>
-                <span className={`text-xs font-mono font-extrabold tracking-widest uppercase ${currentStory.accentColor}`}>
+                <span className={`text-[11px] font-mono font-extrabold tracking-widest uppercase ${currentStory.accentColor}`}>
                   {currentStory.phase} · {currentStory.category}
                 </span>
-                <h3 className="text-2xl sm:text-4xl font-extrabold pt-1">{currentStory.title}</h3>
+                <h3 className="text-xl sm:text-3xl font-extrabold pt-0.5">{currentStory.title}</h3>
               </div>
             </div>
-            <span className={`text-xs font-mono font-bold px-4 py-1.5 rounded-full uppercase ${currentStory.badgeBg}`}>
+            <span className={`text-xs font-mono font-bold px-3.5 py-1 rounded-full uppercase ${currentStory.badgeBg}`}>
               PHASE {currentStory.num}
             </span>
           </div>
 
           {/* Large Editorial Statement */}
-          <div className="space-y-4 max-w-4xl">
-            <h4 className={`text-2xl sm:text-3xl font-extrabold leading-snug ${currentStory.accentColor}`}>
+          <div className="space-y-2 max-w-4xl">
+            <h4 className={`text-xl sm:text-2xl font-extrabold leading-snug ${currentStory.accentColor}`}>
               "{currentStory.slogan}"
             </h4>
-            <p className="text-base sm:text-lg opacity-90 leading-relaxed font-normal">
+            <p className="text-sm sm:text-base opacity-90 leading-relaxed font-normal">
               {currentStory.desc}
             </p>
           </div>
 
           {/* Key Focus Domains Grid */}
-          <div className="space-y-3 pt-2">
-            <span className="text-xs font-mono font-bold opacity-75 uppercase tracking-wider">CORE DOMAINS</span>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="space-y-2 pt-1">
+            <span className="text-[10px] font-mono font-bold opacity-75 uppercase tracking-wider">CORE DOMAINS</span>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
               {currentStory.keywords.map((kw) => (
-                <div key={kw} className="bg-current/10 p-4 rounded-xl border border-current/20 text-xs font-bold flex items-center gap-2">
-                  <Check className="w-4 h-4 shrink-0" />
-                  <span>{kw}</span>
+                <div key={kw} className="bg-current/10 p-3 rounded-xl border border-current/20 text-xs font-bold flex items-center gap-2">
+                  <Check className="w-3.5 h-3.5 shrink-0" />
+                  <span className="truncate">{kw}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Action Link */}
-          <div className="pt-4 flex justify-end">
+          <div className="pt-2 flex justify-end">
             <a
               href={currentStory.link}
-              className={`inline-flex items-center gap-3 px-8 py-4 text-sm font-bold rounded-xl shadow-lg transition-all duration-200 hover:-translate-y-0.5 ${currentStory.btnColor}`}
+              className={`inline-flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-bold rounded-xl shadow-md transition-all duration-200 hover:-translate-y-0.5 ${currentStory.btnColor}`}
             >
               <span>상세 영역 보기</span>
               <ArrowRight className="w-4 h-4" />
@@ -141,5 +142,6 @@ export default function BusinessArchitecture() {
     </section>
   )
 }
+
 
 

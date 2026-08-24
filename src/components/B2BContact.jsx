@@ -18,31 +18,31 @@ export default function B2BContact() {
   }
 
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-[#F4F8FC] border-b border-clarion-line">
-      <div className="container-main space-y-12">
-        <div className="grid lg:grid-cols-12 gap-12 items-start">
+    <section id="contact" className="py-10 lg:pt-12 lg:pb-10 bg-[#F4F8FC] border-b border-clarion-line">
+      <div className="container-main space-y-8">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           {/* Left Description */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="space-y-4">
+          <div className="lg:col-span-5 space-y-5">
+            <div className="space-y-3">
               <span className="inline-block px-3.5 py-1 bg-[#1265E5]/10 text-[#1265E5] font-mono font-bold text-xs tracking-wider uppercase rounded-full border border-[#1265E5]/20">
                 CONTACT US · B2B LEAD
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#142033] leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#142033] leading-tight">
                 프로젝트 및 <br />
                 <span className="text-[#1265E5]">B2B 문의하기</span>
               </h2>
-              <p className="text-base text-[#68758A] leading-relaxed font-normal">
+              <p className="text-xs sm:text-sm text-[#68758A] leading-relaxed font-normal">
                 Enterprise IT/SI, Financial IT, Cloud, AI/Data 플랫폼 및 Healthcare AI 파트너십 문의를 남겨주시면
                 담당자가 검토 후 연락드립니다.
               </p>
             </div>
 
-            <div className="bg-white p-7 rounded-2xl border border-clarion-line space-y-3 shadow-xs">
-              <div className="flex items-center gap-3 text-[#1265E5]">
-                <MessageSquare className="w-5 h-5" />
-                <h3 className="text-base font-bold text-[#142033]">B2B 상담 및 파트너십 안내</h3>
+            <div className="bg-white p-5 lg:p-6 rounded-2xl border border-clarion-line space-y-2.5 shadow-xs">
+              <div className="flex items-center gap-2.5 text-[#1265E5]">
+                <MessageSquare className="w-4 h-4" />
+                <h3 className="text-sm font-bold text-[#142033]">B2B 상담 및 파트너십 안내</h3>
               </div>
-              <p className="text-xs sm:text-sm text-[#68758A] leading-relaxed font-normal">
+              <p className="text-xs text-[#68758A] leading-relaxed font-normal">
                 프로젝트 범위나 구축하고자 하는 인프라 요구사항을 남겨주시면
                 담당 기술팀에서 빠르게 확인 후 커뮤니케이션을 도와드립니다.
               </p>
@@ -50,7 +50,8 @@ export default function B2BContact() {
           </div>
 
           {/* Right Form */}
-          <div className="lg:col-span-7 bg-white p-8 lg:p-10 rounded-3xl border border-clarion-line shadow-sm">
+          <div className="lg:col-span-7 bg-white p-6 lg:p-7 rounded-3xl border border-clarion-line shadow-sm">
+
             {submitted ? (
               <div className="text-center py-12 space-y-5">
                 <div className="w-16 h-16 bg-[#1265E5]/10 text-[#1265E5] rounded-full flex items-center justify-center mx-auto">
