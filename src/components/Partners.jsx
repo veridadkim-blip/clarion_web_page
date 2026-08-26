@@ -183,173 +183,177 @@ export default function Partners() {
       {/* 2. R&D CENTER + INTELLECTUAL PROPERTY VISUAL TECHNOLOGY EVIDENCE */}
       <section
         id="rnd-ip"
-        className="fullscreen-section bg-white text-[#142033] border-b border-clarion-line/60 relative overflow-hidden lg:!justify-start"
+        className="fullscreen-section bg-white text-[#142033] border-b border-clarion-line/60 relative overflow-hidden"
       >
-        <div className="container-main space-y-5 lg:space-y-6 pt-20 lg:pt-24 pb-8 lg:pb-10 flow-root">
+        <div className="container-main max-w-7xl lg:max-w-[1320px] space-y-5 lg:space-y-6 relative z-10 pt-20 lg:pt-24 pb-8 lg:pb-10 my-auto">
 
-
-          {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-clarion-line/40 pb-4">
-            <div className="space-y-2 max-w-2xl">
-              <span className="inline-block px-3 py-0.5 bg-[#1265E5]/10 text-[#1265E5] font-mono font-bold text-xs tracking-widest uppercase rounded-full border border-[#1265E5]/20">
-                {rndCenterInfo.labelEn}
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight text-[#142033]">
-                실행의 경험을, <br />
-                <span className="text-[#1265E5]">기술자산으로 축적합니다.</span>
-              </h2>
-            </div>
-            <div className="space-y-1 max-w-md">
-              <p className="text-xs sm:text-sm text-clarion-muted font-medium leading-relaxed">
-                공식 인정 기업부설연구소와 출원된 특허 지식재산을 바탕으로 <br className="hidden sm:inline" />
-                지능형 기술 자산을 확장합니다.
-              </p>
-              <p className="text-xs font-mono text-[#1265E5] font-bold uppercase tracking-wider">
-                FROM EXECUTION TO TECHNOLOGY ASSETS
-              </p>
-            </div>
+          {/* 1. Section Editorial Header */}
+          <div className="border-b border-clarion-line/60 pb-3.5 text-left">
+            <span className="inline-flex items-center gap-2 text-[#1265E5] font-mono font-bold text-xs tracking-widest uppercase border-b-2 border-[#1265E5] pb-0.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#1265E5]" />
+              R&D / IP · TECHNOLOGY ASSETS
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#142033] leading-tight tracking-tight pt-1.5">
+              기술을 연구하고, <span className="text-[#1265E5]">자산으로 축적합니다.</span>
+            </h2>
+            <p className="text-sm sm:text-base text-[#334155] font-semibold pt-1">
+              공식 인정 기업부설연구소와 특허 출원을 바탕으로 기술 자산을 축적합니다.
+            </p>
           </div>
 
-
-          {/* Desktop Composition: LEFT 58% Real Photo / RIGHT 42% Technology Proof */}
-          <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+          {/* 2. Desktop 1-Screen Composition: LEFT 45% Real R&D Photo / RIGHT 55% Patent Evidence */}
+          <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-stretch text-left">
             
-            {/* LEFT 58%: Real R&D Office Photo (User Provided Authentic Photo) */}
-            <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-clarion-line/60 shadow-lg flex flex-col justify-between space-y-6">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between border-b border-clarion-line/40 pb-3">
-                  <div className="flex items-center gap-3">
-                    <span className="w-7 h-7 rounded-lg bg-[#1265E5] text-white flex items-center justify-center font-mono font-extrabold text-xs">
-                      02
+            {/* LEFT 45%: Real R&D Office Photo Evidence */}
+            <div className="lg:col-span-5 bg-[#F8FAFC] rounded-xl p-5 border border-clarion-line/70 flex flex-col justify-between space-y-4">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between border-b border-clarion-line/40 pb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#1265E5]" />
+                    <span className="text-xs font-mono font-bold text-[#1265E5] uppercase tracking-wider">
+                      CORPORATE R&D CENTER
                     </span>
-                    <div>
-                      <span className="text-[10px] font-mono font-bold text-[#1265E5] uppercase tracking-wider">
-                        CORPORATE R&D CENTER
-                      </span>
-                      <h3 className="text-base sm:text-xl font-extrabold text-[#142033]">
-                        {rndCenterInfo.korTitle}
-                      </h3>
-                    </div>
                   </div>
-                  <span className="text-[10px] font-mono font-extrabold text-[#1265E5] bg-[#1265E5]/10 px-2.5 py-1 rounded-full border border-[#1265E5]/20">
-                    {rndCenterInfo.displayBadge}
+                  <span className="text-[10px] font-mono font-bold text-[#1265E5] bg-[#1265E5]/10 px-2 py-0.5 rounded border border-[#1265E5]/20">
+                    RECOGNIZED
                   </span>
                 </div>
 
-                {/* Real R&D Office Photo Crop */}
-                <div className="relative rounded-2xl overflow-hidden shadow-lg border border-clarion-line/60 group aspect-[16/10]">
-                  <img
-                    src={rndCenterInfo.image}
-                    alt="(주)클라리온 기업부설연구소 실제 사무실 전경 및 연구 공간"
-                    className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#07152B]/85 via-transparent to-transparent pointer-events-none" />
-                  <div className="absolute bottom-4 left-4 right-4 text-white flex items-center justify-between z-10">
-                    <span className="text-xs font-mono font-bold text-white bg-black/50 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
-                      {rndCenterInfo.locationCaption}
-                    </span>
-                    <span className="text-[10px] font-mono text-white/80 hidden sm:inline-block">
-                      KOITA RECOGNIZED 2026.07.29
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Domain Badges & Metadata */}
-              <div className="space-y-3 pt-2 border-t border-clarion-line/40">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-clarion-muted font-medium">인정기관: {rndCenterInfo.agency}</span>
-                  <span className="font-mono text-clarion-muted text-[11px]">인정일: {rndCenterInfo.recognitionDate}</span>
-                </div>
-                <div className="flex flex-wrap items-center gap-1.5">
-                  <span className="text-[10px] font-mono font-bold text-clarion-muted uppercase mr-1">R&D DOMAINS:</span>
-                  {rndCenterInfo.researchDomains.map((domain) => (
-                    <span
-                      key={domain}
-                      className="bg-[#F8FAFC] text-[#1265E5] text-[10px] font-mono font-extrabold px-2.5 py-0.5 rounded border border-[#1265E5]/20"
-                    >
-                      {domain}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* RIGHT 42%: Patent Pending Abstract Flow (VERIFIED) */}
-            <div className="lg:col-span-5 bg-[#07152B] text-white rounded-3xl p-6 sm:p-8 border border-white/15 shadow-xl flex flex-col justify-between space-y-6">
-              <div className="space-y-5">
-                <div className="flex items-center justify-between border-b border-white/15 pb-3">
-                  <div className="flex items-center gap-3">
-                    <span className="w-7 h-7 rounded-lg bg-[#37B7FF] text-[#07152B] flex items-center justify-center font-mono font-extrabold text-xs">
-                      03
-                    </span>
-                    <div>
-                      <span className="text-[10px] font-mono font-bold text-[#37B7FF] uppercase tracking-wider">
-                        PATENT PENDING
-                      </span>
-                      <h3 className="text-base sm:text-lg font-extrabold text-white">
-                        특허출원 (PATENT PENDING)
-                      </h3>
-                    </div>
-                  </div>
-                  <span className="text-[10px] font-mono font-black text-cyan-200 bg-[#37B7FF]/20 px-2.5 py-1 rounded-full border border-[#37B7FF]/40">
-                    PATENT PENDING
-                  </span>
-                </div>
-
-                {/* Patent Metadata Box */}
-                <div className="bg-white/5 p-4 rounded-2xl border border-white/10 space-y-2">
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="font-mono font-bold text-[#37B7FF]">출원번호: {patentInfo.applicationNo}</span>
-                    <span className="font-mono text-white/50 text-[10px]">Filed: {patentInfo.filingDate}</span>
-                  </div>
-                  <p className="text-xs font-bold text-white leading-snug">
-                    "{patentInfo.shortTitle}"
+                <div className="space-y-1">
+                  <h3 className="text-base sm:text-lg font-extrabold text-[#142033]">
+                    {rndCenterInfo.korTitle}
+                  </h3>
+                  <p className="text-xs font-mono text-clarion-muted">
+                    한국산업기술진흥협회(KOITA) 인정 기업부설연구소
                   </p>
                 </div>
 
-                {/* Abstract Technology Cascade Flow Diagram */}
-                <div className="space-y-2 pt-1">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-mono font-bold text-white/50 uppercase tracking-wider">
-                      ABSTRACT CASCADE INFERENCE FLOW
+                {/* Real R&D Office Photo Crop */}
+                <div className="relative rounded-lg overflow-hidden border border-clarion-line/80 aspect-[16/10] group">
+                  <img
+                    src={rndCenterInfo.image}
+                    alt="(주)클라리온 기업부설연구소 실제 사무실 전경"
+                    className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#07152B]/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-2.5 left-3 right-3 text-white flex items-center justify-between z-10">
+                    <span className="text-[11px] font-mono font-bold text-white bg-black/60 backdrop-blur-md px-2.5 py-0.5 rounded">
+                      (주)클라리온 기업부설연구소
                     </span>
-                    <span className="text-[9px] font-mono text-[#37B7FF]">NON-MEDICAL WELLNESS</span>
+                    <span className="text-[10px] font-mono text-white/80 hidden sm:inline-block">
+                      인정일: 2026.07.29
+                    </span>
                   </div>
-                  <div className="space-y-1.5">
+                </div>
+              </div>
+
+              {/* Factual Metadata */}
+              <div className="pt-2 border-t border-clarion-line/40 text-xs space-y-1 text-clarion-muted font-medium">
+                <div className="flex items-center justify-between">
+                  <span>인정번호: <strong className="text-[#142033] font-mono font-bold">{rndCenterInfo.recognitionNo}</strong></span>
+                  <span className="font-mono text-[11px]">인정기관: {rndCenterInfo.agency}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT 55%: Patent Pending Evidence & Flat Technology Flow */}
+            <div className="lg:col-span-7 bg-[#07152B] text-white rounded-xl p-5 sm:p-6 border border-white/15 shadow-md flex flex-col justify-between space-y-4">
+              <div className="space-y-4">
+                
+                {/* Status Indicator Bar */}
+                <div className="flex items-center justify-between border-b border-white/15 pb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#37B7FF]" />
+                    <span className="text-xs font-mono font-extrabold text-[#37B7FF] uppercase tracking-wider">
+                      PATENT PENDING
+                    </span>
+                  </div>
+                  <span className="text-[10px] font-mono font-bold text-white/70 bg-white/10 px-2.5 py-0.5 rounded border border-white/20">
+                    Filed · 2026.08.14
+                  </span>
+                </div>
+
+                {/* Application Metadata & Official Patent Title */}
+                <div className="space-y-2 border-b border-white/10 pb-3">
+                  <div className="flex items-center justify-between text-xs font-mono">
+                    <span className="font-bold text-[#37B7FF]">
+                      Application No. {patentInfo.applicationNo}
+                    </span>
+                    <span className="text-white/50 text-[11px]">
+                      Filed 2026.08.14
+                    </span>
+                  </div>
+                  <h4 className="text-xs sm:text-sm font-extrabold text-white leading-relaxed tracking-tight pt-0.5">
+                    {patentInfo.title}
+                  </h4>
+                </div>
+
+                {/* Flat Horizontal Technology Flow Rail (No Individual Cards!) */}
+                <div className="space-y-2.5 pt-1">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-mono font-bold text-white/60 uppercase tracking-wider">
+                      TECHNOLOGY CASCADE INFERENCE FLOW
+                    </span>
+                    <span className="text-[10px] font-mono text-[#37B7FF]">NON-MEDICAL WELLNESS</span>
+                  </div>
+
+                  {/* Desktop Horizontal Flow Rail */}
+                  <div className="hidden sm:block relative py-2">
+                    <div className="grid grid-cols-5 gap-2 relative z-10">
+                      {patentInfo.abstractFlow.map((item, idx) => (
+                        <div
+                          key={item.step}
+                          className="flex flex-col items-center text-center space-y-1 px-1 py-1 border-r border-white/10 last:border-r-0"
+                        >
+                          <span className="text-[10px] font-mono font-bold text-[#37B7FF] block">
+                            {item.step}
+                          </span>
+                          <h5 className="text-[11px] font-extrabold text-white leading-tight">
+                            {item.key}
+                          </h5>
+                          <p className="text-[9px] font-mono text-white/60 whitespace-nowrap">
+                            {item.desc}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Mobile Vertical Flow */}
+                  <div className="sm:hidden space-y-1.5 py-1">
                     {patentInfo.abstractFlow.map((item) => (
                       <div
                         key={item.step}
-                        className="bg-white/5 px-3 py-2 rounded-xl border border-white/10 text-xs flex items-center justify-between"
+                        className="flex items-center justify-between text-xs border-b border-white/10 pb-1.5"
                       >
                         <div className="flex items-center gap-2">
-                          <span className="font-mono text-[10px] font-bold text-[#37B7FF]">
-                            {item.step}
-                          </span>
-                          <span className="font-extrabold text-[#37B7FF]">{item.key}</span>
+                          <span className="font-mono text-[10px] font-bold text-[#37B7FF]">{item.step}</span>
+                          <span className="font-bold text-white">{item.key}</span>
                         </div>
-                        <span className="text-[11px] text-white/70 font-normal truncate max-w-[140px] sm:max-w-none">
-                          {item.desc}
-                        </span>
+                        <span className="text-[10px] font-mono text-white/60">{item.desc}</span>
                       </div>
                     ))}
                   </div>
                 </div>
+
               </div>
 
-              {/* Patent Boundary Note */}
-              <div className="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-white/50">
+              {/* Patent Metadata Footer */}
+              <div className="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-white/60">
                 <span>출원인: {patentInfo.applicant}</span>
                 <span>발명자: {patentInfo.inventor}</span>
+                <span className="hidden sm:inline-block">특허대리인: {patentInfo.agent}</span>
               </div>
             </div>
 
           </div>
 
         </div>
+      </section>
 
-        {/* 3. ECOSYSTEM & REFERENCE GOVERNANCE LAYER (STEP 4) */}
-        <div className="space-y-8 pt-6 border-t border-clarion-line/60">
+      {/* 3. ECOSYSTEM & REFERENCE GOVERNANCE LAYER (STEP 4) */}
+      <section className="bg-white py-12 lg:py-20">
+        <div className="container-main max-w-7xl lg:max-w-[1320px] space-y-8">
           
           {/* Layer Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-clarion-line/40 pb-6">
@@ -405,7 +409,6 @@ export default function Partners() {
           {/* Sector Governance Cards Grid (Seamless Fallback to Approved Companies) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
             {referenceGovernance.categorySectors.map((sector) => {
-              // Find if any specific approved reference exists for this category
               const approvedMatch = approvedReferences.find((ref) => ref.categoryFallback === sector.code)
 
               return (
@@ -423,7 +426,6 @@ export default function Partners() {
                       </span>
                     </div>
 
-                    {/* Render Approved Reference or Sector Title */}
                     <div>
                       <h4 className="text-xs font-extrabold text-[#142033]">
                         {approvedMatch ? approvedMatch.name : sector.title}

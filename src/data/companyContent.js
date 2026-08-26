@@ -39,24 +39,25 @@ export const rndCenterInfo = {
   researchDomains: ['AI', 'DATA', 'CLOUD', 'PLATFORM'],
 }
 
-// VERIFIED PATENT PENDING (특허출원 완료)
+// VERIFIED PATENT PENDING (특허출원)
 export const patentInfo = {
-  status: 'VERIFIED PATENT PENDING',
+  status: 'PATENT PENDING',
   publicApproved: true,
   displayBadge: 'PATENT PENDING · Filed 2026.08.14',
   applicationNo: '10-2026-0152975',
   filingDate: '2026.08.14',
   applicant: '주식회사 클라리온',
   inventor: '김동욱',
+  agent: '특허법인 더웨이브',
   examinationRequested: true,
   title: '장부 건강벡터와 전조 신호를 이용한 비의료 생활건강 관리 우선순위 연쇄 추론 방법, 및 그 장치',
-  shortTitle: '비의료 생활건강 관리 우선순위 연쇄 추론 기술',
+  shortTitle: '장부 건강벡터와 전조 신호를 이용한 비의료 생활건강 관리 우선순위 연쇄 추론 방법, 및 그 장치',
   abstractFlow: [
-    { step: '01', key: 'QUESTIONNAIRE', desc: '건강문진 및 생활습관 수집' },
-    { step: '02', key: 'ORGAN HEALTH VECTOR', desc: '장부 건강벡터 분석' },
-    { step: '03', key: 'HEALTH AXIS', desc: '건강축 및 전조신호' },
-    { step: '04', key: 'CASCADE INFERENCE', desc: '연쇄 추론 모듈' },
-    { step: '05', key: 'LIFESTYLE HEALTH PRIORITY', desc: '생활건강 관리 우선순위' },
+    { step: '01', key: 'QUESTIONNAIRE / SIGNAL', desc: '문진 및 생활신호 수집' },
+    { step: '02', key: 'HEALTH VECTOR', desc: '장부 건강벡터 분석' },
+    { step: '03', key: 'HEALTH AXIS', desc: '건강축 전조신호 연동' },
+    { step: '04', key: 'CASCADE INFERENCE', desc: '우선순위 연쇄 추론' },
+    { step: '05', key: 'LIFESTYLE PRIORITY', desc: '생활건강 관리 실천' },
   ],
 }
 
