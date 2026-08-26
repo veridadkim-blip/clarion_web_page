@@ -38,130 +38,154 @@ export default function Partners() {
         id="track-record"
         className="fullscreen-section bg-[#F8FAFC] text-[#142033] border-b border-clarion-line/60 relative overflow-hidden"
       >
-        <div className="container-main space-y-5 lg:space-y-6 pt-20 lg:pt-24 pb-8 lg:pb-10 my-auto">
+        <div className="container-main max-w-7xl lg:max-w-[1320px] space-y-6 lg:space-y-7 relative z-10 pt-20 lg:pt-24 pb-8 lg:pb-10 my-auto">
 
-
-          {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-clarion-line/40 pb-4">
-            <div className="space-y-2 max-w-2xl">
-              <span className="inline-block px-3 py-0.5 bg-[#1265E5]/10 text-[#1265E5] font-mono font-bold text-xs tracking-widest uppercase rounded-full border border-[#1265E5]/20">
-                {projectExperience.labelEn}
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight text-[#142033]">
-                현장에서 쌓인 실행력이, <br />
-                <span className="text-[#1265E5]">다음 기술의 기반이 됩니다.</span>
-              </h2>
-            </div>
-            <div className="space-y-1 max-w-md">
-              <p className="text-xs sm:text-sm text-clarion-muted font-medium leading-relaxed">
-                검증된 엔터프라이즈 프로젝트 수행 경험과 실행 체계가 <br className="hidden sm:inline" />
-                클라리온 기술자산의 핵심 원동력입니다.
-              </p>
-              <p className="text-xs font-mono text-[#1265E5] font-bold uppercase tracking-wider">
-                PROVEN IN REAL OPERATIONS · ENTERPRISE IT
-              </p>
-            </div>
+          {/* 1. Section Editorial Header */}
+          <div className="border-b border-clarion-line/60 pb-4 text-left">
+            <span className="inline-flex items-center gap-2 text-[#1265E5] font-mono font-bold text-xs tracking-widest uppercase border-b-2 border-[#1265E5] pb-0.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#1265E5]" />
+              PROJECT EXPERIENCE · EXECUTION IN PRACTICE
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#142033] leading-tight tracking-tight pt-1.5">
+              현장에서 쌓인 실행력이, <span className="text-[#1265E5]">다음 기술의 기반이 됩니다.</span>
+            </h2>
+            <p className="text-sm sm:text-base text-[#334155] font-semibold pt-1">
+              금융·보험 IT 및 대형 엔터프라이즈 환경에서 검증된 프로젝트 수행 경험과 실체 있는 실행 체계입니다.
+            </p>
           </div>
 
-          {/* Primary Infographic: Project Experience Matrix & Delivery Engine */}
-          <div className="bg-white rounded-3xl p-5 sm:p-7 border border-clarion-line/60 shadow-lg space-y-5">
+          {/* 2. PRIMARY ARCHITECTURE CANVAS: Flat Editorial Industry Landscape */}
+          <div className="py-2 space-y-6 relative text-left">
             
-            {/* Top Sector Matrix Header (BANKING / SECURITIES / INSURANCE) */}
-            <div className="space-y-3">
-              <div className="flex items-center justify-between border-b border-clarion-line/40 pb-2">
-                <span className="text-xs font-mono font-extrabold text-[#1265E5] tracking-widest uppercase">
-                  01 DOMAIN EXPERIENCE MATRIX
+            {/* Top Header Bar */}
+            <div className="flex items-center justify-between border-b border-clarion-line/40 pb-2.5">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#1265E5]" />
+                <span className="text-xs font-mono font-bold text-[#1265E5] uppercase tracking-wider">
+                  01 INDUSTRY EXPERIENCE LANDSCAPE
                 </span>
-                <span className="text-[11px] font-mono text-clarion-muted">
-                  FINANCIAL & ENTERPRISE SECTORS
+              </div>
+              <span className="text-xs font-mono text-clarion-muted hidden sm:inline-block">
+                FINANCIAL & ENTERPRISE IT DOMAINS
+              </span>
+            </div>
+
+            {/* 5 Industry Experience Flat Editorial Landscape */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 py-1">
+              {referenceGovernance.categorySectors.map((sector) => (
+                <div
+                  key={sector.code}
+                  className="space-y-1.5 px-2.5 py-2 border-l-2 border-clarion-line/80 hover:border-[#1265E5] transition-all duration-200 group"
+                >
+                  <span className="text-[11px] font-mono font-bold text-[#1265E5] block">
+                    {sector.code}
+                  </span>
+                  <h3 className="text-xs sm:text-sm font-extrabold text-[#142033] group-hover:text-[#1265E5] transition-colors leading-snug">
+                    {sector.title}
+                  </h3>
+                  <p className="text-[11px] font-mono text-[#475569] font-medium leading-snug whitespace-nowrap">
+                    {sector.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* 3. PROJECT DELIVERY TIMELINE RAIL */}
+            <div className="space-y-3 pt-3 border-t border-clarion-line/40">
+              <div className="flex items-center justify-between border-b border-clarion-line/40 pb-2">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#1265E5]" />
+                  <span className="text-xs font-mono font-bold text-[#1265E5] uppercase tracking-wider">
+                    02 PROJECT DELIVERY TIMELINE RAIL
+                  </span>
+                </div>
+                <span className="text-xs font-mono text-clarion-muted hidden sm:inline-block">
+                  END-TO-END METHODOLOGY
                 </span>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
-                {referenceGovernance.categorySectors.map((sector) => {
-                  return (
-                    <div key={sector.code} className="bg-[#F8FAFC] p-3 rounded-xl border border-clarion-line/60 space-y-1 group hover:border-[#1265E5]/40 transition-all">
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs sm:text-sm font-black font-mono tracking-wider text-[#142033] group-hover:text-[#1265E5] transition-colors truncate">
-                          {sector.code}
-                        </span>
-                        <Building2 className="w-3.5 h-3.5 text-[#1265E5] shrink-0" />
+              {/* Desktop Horizontal Delivery Lifecycle Rail */}
+              <div className="hidden lg:block relative py-6">
+                <div className="absolute top-[32px] left-[6%] right-[6%] h-[2px] bg-clarion-line/80 z-0">
+                  <div className="absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-transparent via-[#1265E5] to-transparent animate-[pulseLine_3s_linear_infinite]" />
+                </div>
+
+                <div className="grid grid-cols-5 gap-3 relative z-10">
+                  {projectExperience.deliveryLifecycle.map((item) => (
+                    <div
+                      key={item.key}
+                      className="group cursor-pointer flex flex-col items-center text-center space-y-3 px-2 py-1"
+                    >
+                      <div className="w-7 h-7 rounded-full bg-[#07152B] text-white flex items-center justify-center font-mono text-xs font-extrabold shadow-sm border border-[#1265E5]/40">
+                        {item.node}
                       </div>
                       <div className="space-y-0.5">
-                        <h4 className="text-[11px] font-bold text-[#142033] truncate">{sector.title}</h4>
-                        <p className="text-[10px] text-clarion-muted leading-tight line-clamp-1">{sector.desc}</p>
+                        <span className="text-[11px] font-mono font-bold text-[#1265E5] block">
+                          {item.key}
+                        </span>
+                        <h4 className="text-xs sm:text-sm font-extrabold text-[#142033] group-hover:text-[#1265E5] transition-colors">
+                          {item.title}
+                        </h4>
+                        <p className="text-[11px] font-mono text-clarion-muted truncate whitespace-nowrap max-w-[170px]">
+                          {item.desc}
+                        </p>
                       </div>
                     </div>
-                  )
-                })}
-              </div>
-            </div>
-
-
-            {/* Center Connector Engine: CLARION DELIVERY LIFECYCLE ENGINE */}
-            <div className="space-y-2 pt-1">
-              <div className="flex items-center justify-between border-b border-clarion-line/40 pb-2">
-                <span className="text-xs font-mono font-extrabold text-[#1265E5] tracking-widest uppercase">
-                  CLARION DELIVERY LIFECYCLE ENGINE
-                </span>
-                <span className="text-[10px] font-mono text-clarion-muted">
-                  5-NODE EXECUTION FLOW
-                </span>
+                  ))}
+                </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
-                {projectExperience.deliveryLifecycle.map((item, idx) => (
+              {/* Mobile Vertical Delivery Timeline Flow */}
+              <div className="lg:hidden space-y-3 relative py-2">
+                <div className="absolute top-4 bottom-4 left-3 w-[2px] bg-clarion-line/80 z-0" />
+                {projectExperience.deliveryLifecycle.map((item) => (
                   <div
                     key={item.key}
-                    className="bg-[#07152B] text-white p-3 rounded-xl border border-white/10 space-y-1 relative group"
+                    className="relative z-10 cursor-pointer flex items-start gap-3.5 pl-1.5 text-left"
                   >
-                    <div className="flex items-center justify-between text-[11px]">
-                      <span className="font-mono font-bold text-[#37B7FF]">{item.node}</span>
-                      <span className="font-mono font-extrabold text-white/50 text-[9px]">{item.key}</span>
+                    <div className="w-5 h-5 rounded-full bg-[#07152B] text-white flex items-center justify-center font-mono text-[10px] font-extrabold shrink-0 mt-0.5">
+                      {item.node}
                     </div>
-                    <h5 className="text-xs font-extrabold text-white">{item.title}</h5>
-                    <p className="text-[10px] text-white/70 leading-snug font-normal line-clamp-2">{item.desc}</p>
-
-                    {idx < projectExperience.deliveryLifecycle.length - 1 && (
-                      <ArrowRight className="w-3.5 h-3.5 text-[#37B7FF] absolute -right-2.5 top-1/2 -translate-y-1/2 hidden lg:block z-10" />
-                    )}
+                    <div className="space-y-0.5">
+                      <h4 className="text-xs font-extrabold text-[#142033]">{item.title}</h4>
+                      <p className="text-[11px] text-clarion-muted font-normal">{item.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>
-            </div>
 
-            {/* Bottom Execution Scopes (Concise 1-line descriptions) */}
-            <div className="space-y-2 pt-1">
-              <span className="text-[11px] font-mono font-extrabold text-clarion-muted uppercase tracking-widest block">
-                EXECUTION CAPABILITY SCOPE
-              </span>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
-                {projectExperience.executionScopes.map((scope) => (
-                  <div
-                    key={scope.key}
-                    className="bg-[#F8FAFC] p-2.5 rounded-xl border border-clarion-line/60 space-y-0.5"
-                  >
-                    <span className="text-[9px] font-mono font-extrabold text-[#1265E5] block">
-                      {scope.key}
-                    </span>
-                    <p className="text-[10px] font-medium text-[#142033] leading-tight truncate">
-                      {scope.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
             </div>
 
           </div>
+
+          {/* 4. Core Execution Scope Inline Summary Bar */}
+          <div className="pt-2 border-t border-clarion-line/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-left">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-xs font-mono font-extrabold text-[#1265E5] uppercase tracking-wider shrink-0">
+                EXECUTION SCOPE:
+              </span>
+              <span className="text-xs sm:text-sm font-bold text-[#142033]">
+                System Integration <span className="text-clarion-line px-1.5">/</span> Financial IT Development <span className="text-clarion-line px-1.5">/</span> Cloud Infrastructure <span className="text-clarion-line px-1.5">/</span> Operations & Maintenance
+              </span>
+            </div>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#1265E5] hover:text-[#07152B] transition-colors duration-200 shrink-0 group"
+            >
+              <span>프로젝트 수행 문의하기</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </div>
+
         </div>
       </section>
 
       {/* 2. R&D CENTER + INTELLECTUAL PROPERTY VISUAL TECHNOLOGY EVIDENCE */}
       <section
         id="rnd-ip"
-        className="fullscreen-section bg-white text-[#142033] border-b border-clarion-line/60 relative overflow-hidden"
+        className="fullscreen-section bg-white text-[#142033] border-b border-clarion-line/60 relative overflow-hidden lg:!justify-start"
       >
-        <div className="container-main space-y-5 lg:space-y-6 pt-20 lg:pt-24 pb-8 lg:pb-10 my-auto">
+        <div className="container-main space-y-5 lg:space-y-6 pt-20 lg:pt-24 pb-8 lg:pb-10 flow-root">
 
 
           {/* Section Header */}

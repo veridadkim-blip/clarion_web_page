@@ -6,8 +6,9 @@ const navLinks = [
   { label: '사업 포트폴리오', href: '#portfolio' },
   { label: 'Core Business', href: '#core-business' },
   { label: 'Growth Tech', href: '#growth-technology' },
-  { label: 'Healthcare AI', href: '#healthcare' },
   { label: '프로젝트', href: '#track-record' },
+  { label: 'R&D / IP', href: '#rnd-ip' },
+  { label: 'Healthcare AI', href: '#healthcare' },
   { label: '문의하기', href: '#contact' },
 ]
 
@@ -49,8 +50,8 @@ export default function Header() {
             </span>
           </a>
 
-          {/* Desktop Nav Links */}
-          <ul className="hidden lg:flex items-center gap-7">
+          {/* Desktop Nav Links (8 Story Flow Links) */}
+          <ul className="hidden lg:flex items-center gap-4 xl:gap-6">
             {navLinks.map((link) => (
               <li key={link.label}>
                 <a
