@@ -104,8 +104,11 @@ export default function CoreBusiness() {
   const [activeNode, setActiveNode] = useState(archNodes[1])
 
   return (
-    <section id="core-business" className="lg:min-h-[calc(100vh-80px)] flex flex-col justify-center py-16 lg:py-24 bg-[#F8FAFC] border-b border-clarion-line/40 text-[#142033] relative overflow-hidden">
-      <div className="container-main space-y-8 lg:space-y-10 relative z-10 my-auto">
+    <section id="core-business" className="fullscreen-section bg-[#F8FAFC] border-b border-clarion-line/40 text-[#142033] relative overflow-hidden">
+      <div className="container-main space-y-5 lg:space-y-6 relative z-10 pt-20 lg:pt-24 pb-8 lg:pb-10 my-auto">
+
+
+
 
         
         {/* Section Header */}

@@ -31,27 +31,29 @@ export default function Partners() {
   const approvedReferences = referenceGovernance.inventory.filter((item) => item.publicApproved)
 
   return (
-    <section
-      id="track-record"
-      className="py-20 lg:py-28 bg-[#F8FAFC] text-[#142033] border-b border-clarion-line/60 relative overflow-hidden"
-    >
-      <div className="container-main space-y-16 lg:space-y-20">
-        
-        {/* 1. PROJECT EXPERIENCE MATRIX SECTION */}
-        <div className="space-y-10">
+    <>
+
+      {/* 1. PROJECT EXPERIENCE MATRIX SECTION */}
+      <section
+        id="track-record"
+        className="fullscreen-section bg-[#F8FAFC] text-[#142033] border-b border-clarion-line/60 relative overflow-hidden"
+      >
+        <div className="container-main space-y-5 lg:space-y-6 pt-20 lg:pt-24 pb-8 lg:pb-10 my-auto">
+
+
           {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-clarion-line/40 pb-8">
-            <div className="space-y-3 max-w-2xl">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-clarion-line/40 pb-4">
+            <div className="space-y-2 max-w-2xl">
               <span className="inline-block px-3 py-0.5 bg-[#1265E5]/10 text-[#1265E5] font-mono font-bold text-xs tracking-widest uppercase rounded-full border border-[#1265E5]/20">
                 {projectExperience.labelEn}
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-[#142033]">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight text-[#142033]">
                 현장에서 쌓인 실행력이, <br />
                 <span className="text-[#1265E5]">다음 기술의 기반이 됩니다.</span>
               </h2>
             </div>
             <div className="space-y-1 max-w-md">
-              <p className="text-sm sm:text-base text-clarion-muted font-medium leading-relaxed">
+              <p className="text-xs sm:text-sm text-clarion-muted font-medium leading-relaxed">
                 검증된 엔터프라이즈 프로젝트 수행 경험과 실행 체계가 <br className="hidden sm:inline" />
                 클라리온 기술자산의 핵심 원동력입니다.
               </p>
@@ -62,11 +64,11 @@ export default function Partners() {
           </div>
 
           {/* Primary Infographic: Project Experience Matrix & Delivery Engine */}
-          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-clarion-line/60 shadow-lg space-y-8">
+          <div className="bg-white rounded-3xl p-5 sm:p-7 border border-clarion-line/60 shadow-lg space-y-5">
             
             {/* Top Sector Matrix Header (BANKING / SECURITIES / INSURANCE) */}
-            <div className="space-y-4">
-              <div className="flex items-center justify-between border-b border-clarion-line/40 pb-3">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between border-b border-clarion-line/40 pb-2">
                 <span className="text-xs font-mono font-extrabold text-[#1265E5] tracking-widest uppercase">
                   01 DOMAIN EXPERIENCE MATRIX
                 </span>
@@ -75,19 +77,19 @@ export default function Partners() {
                 </span>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
                 {referenceGovernance.categorySectors.map((sector) => {
                   return (
-                    <div key={sector.code} className="bg-[#F8FAFC] p-4 rounded-xl border border-clarion-line/60 space-y-2 group hover:border-[#1265E5]/40 transition-all">
+                    <div key={sector.code} className="bg-[#F8FAFC] p-3 rounded-xl border border-clarion-line/60 space-y-1 group hover:border-[#1265E5]/40 transition-all">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm sm:text-base font-black font-mono tracking-wider text-[#142033] group-hover:text-[#1265E5] transition-colors truncate">
+                        <span className="text-xs sm:text-sm font-black font-mono tracking-wider text-[#142033] group-hover:text-[#1265E5] transition-colors truncate">
                           {sector.code}
                         </span>
-                        <Building2 className="w-4 h-4 text-[#1265E5] shrink-0" />
+                        <Building2 className="w-3.5 h-3.5 text-[#1265E5] shrink-0" />
                       </div>
                       <div className="space-y-0.5">
-                        <h4 className="text-xs font-bold text-[#142033] truncate">{sector.title}</h4>
-                        <p className="text-[10px] text-clarion-muted leading-tight line-clamp-2">{sector.desc}</p>
+                        <h4 className="text-[11px] font-bold text-[#142033] truncate">{sector.title}</h4>
+                        <p className="text-[10px] text-clarion-muted leading-tight line-clamp-1">{sector.desc}</p>
                       </div>
                     </div>
                   )
@@ -97,7 +99,7 @@ export default function Partners() {
 
 
             {/* Center Connector Engine: CLARION DELIVERY LIFECYCLE ENGINE */}
-            <div className="space-y-3 pt-2">
+            <div className="space-y-2 pt-1">
               <div className="flex items-center justify-between border-b border-clarion-line/40 pb-2">
                 <span className="text-xs font-mono font-extrabold text-[#1265E5] tracking-widest uppercase">
                   CLARION DELIVERY LIFECYCLE ENGINE
@@ -107,18 +109,18 @@ export default function Partners() {
                 </span>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
                 {projectExperience.deliveryLifecycle.map((item, idx) => (
                   <div
                     key={item.key}
-                    className="bg-[#07152B] text-white p-4 rounded-xl border border-white/10 space-y-1.5 relative group"
+                    className="bg-[#07152B] text-white p-3 rounded-xl border border-white/10 space-y-1 relative group"
                   >
-                    <div className="flex items-center justify-between text-xs">
+                    <div className="flex items-center justify-between text-[11px]">
                       <span className="font-mono font-bold text-[#37B7FF]">{item.node}</span>
-                      <span className="font-mono font-extrabold text-white/50 text-[10px]">{item.key}</span>
+                      <span className="font-mono font-extrabold text-white/50 text-[9px]">{item.key}</span>
                     </div>
                     <h5 className="text-xs font-extrabold text-white">{item.title}</h5>
-                    <p className="text-[11px] text-white/70 leading-snug font-normal">{item.desc}</p>
+                    <p className="text-[10px] text-white/70 leading-snug font-normal line-clamp-2">{item.desc}</p>
 
                     {idx < projectExperience.deliveryLifecycle.length - 1 && (
                       <ArrowRight className="w-3.5 h-3.5 text-[#37B7FF] absolute -right-2.5 top-1/2 -translate-y-1/2 hidden lg:block z-10" />
@@ -129,20 +131,20 @@ export default function Partners() {
             </div>
 
             {/* Bottom Execution Scopes (Concise 1-line descriptions) */}
-            <div className="space-y-3 pt-2">
-              <span className="text-xs font-mono font-extrabold text-clarion-muted uppercase tracking-widest block">
+            <div className="space-y-2 pt-1">
+              <span className="text-[11px] font-mono font-extrabold text-clarion-muted uppercase tracking-widest block">
                 EXECUTION CAPABILITY SCOPE
               </span>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
                 {projectExperience.executionScopes.map((scope) => (
                   <div
                     key={scope.key}
-                    className="bg-[#F8FAFC] p-3 rounded-xl border border-clarion-line/60 space-y-1"
+                    className="bg-[#F8FAFC] p-2.5 rounded-xl border border-clarion-line/60 space-y-0.5"
                   >
-                    <span className="text-[10px] font-mono font-extrabold text-[#1265E5] block">
+                    <span className="text-[9px] font-mono font-extrabold text-[#1265E5] block">
                       {scope.key}
                     </span>
-                    <p className="text-[11px] font-medium text-[#142033] leading-tight">
+                    <p className="text-[10px] font-medium text-[#142033] leading-tight truncate">
                       {scope.desc}
                     </p>
                   </div>
@@ -150,37 +152,31 @@ export default function Partners() {
               </div>
             </div>
 
-            {/* Transition Note to Growth Tech */}
-            <div className="pt-2 border-t border-clarion-line/40 flex items-center justify-between text-xs font-medium text-clarion-muted">
-              <span className="text-[#1265E5] font-semibold">{projectExperience.transitionNote}</span>
-              <a
-                href="#growth-technology"
-                className="inline-flex items-center gap-1 font-mono font-bold text-xs text-[#1265E5] hover:underline"
-              >
-                <span>GROWTH TECH CHANNELS</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
-            </div>
-
           </div>
         </div>
+      </section>
 
-        {/* 2. R&D CENTER + INTELLECTUAL PROPERTY VISUAL TECHNOLOGY EVIDENCE */}
-        <div className="space-y-10 pt-6 border-t border-clarion-line/60">
-          
+      {/* 2. R&D CENTER + INTELLECTUAL PROPERTY VISUAL TECHNOLOGY EVIDENCE */}
+      <section
+        id="rnd-ip"
+        className="fullscreen-section bg-white text-[#142033] border-b border-clarion-line/60 relative overflow-hidden"
+      >
+        <div className="container-main space-y-5 lg:space-y-6 pt-20 lg:pt-24 pb-8 lg:pb-10 my-auto">
+
+
           {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-clarion-line/40 pb-8">
-            <div className="space-y-3 max-w-2xl">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-clarion-line/40 pb-4">
+            <div className="space-y-2 max-w-2xl">
               <span className="inline-block px-3 py-0.5 bg-[#1265E5]/10 text-[#1265E5] font-mono font-bold text-xs tracking-widest uppercase rounded-full border border-[#1265E5]/20">
                 {rndCenterInfo.labelEn}
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-[#142033]">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight text-[#142033]">
                 실행의 경험을, <br />
                 <span className="text-[#1265E5]">기술자산으로 축적합니다.</span>
               </h2>
             </div>
             <div className="space-y-1 max-w-md">
-              <p className="text-sm sm:text-base text-clarion-muted font-medium leading-relaxed">
+              <p className="text-xs sm:text-sm text-clarion-muted font-medium leading-relaxed">
                 공식 인정 기업부설연구소와 출원된 특허 지식재산을 바탕으로 <br className="hidden sm:inline" />
                 지능형 기술 자산을 확장합니다.
               </p>
@@ -189,6 +185,7 @@ export default function Partners() {
               </p>
             </div>
           </div>
+
 
           {/* Desktop Composition: LEFT 58% Real Photo / RIGHT 42% Technology Proof */}
           <div className="grid lg:grid-cols-12 gap-8 items-stretch">
@@ -435,10 +432,11 @@ export default function Partners() {
 
         </div>
 
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
+
 
 
 

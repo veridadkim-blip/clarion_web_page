@@ -26,7 +26,7 @@ export default function HealthcareHighlight() {
   return (
     <section
       id="healthcare"
-      className="py-20 lg:py-28 bg-[#F2FBF7] text-[#142033] relative overflow-hidden border-b border-clarion-line/60"
+      className="fullscreen-section bg-[#F2FBF7] text-[#142033] relative overflow-hidden border-b border-clarion-line/60"
     >
       {/* Background Natural Ambient Wave */}
       <div className="absolute inset-0 pointer-events-none opacity-25">
@@ -41,7 +41,9 @@ export default function HealthcareHighlight() {
         </svg>
       </div>
 
-      <div className="container-main relative z-10 space-y-12 lg:space-y-16">
+      <div className="container-main relative z-10 space-y-5 lg:space-y-6 pt-20 lg:pt-24 pb-8 lg:pb-10 my-auto">
+
+
         
         {/* Section Header & Human Climax Messaging */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-emerald-900/10 pb-8">

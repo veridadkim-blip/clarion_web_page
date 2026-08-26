@@ -18,8 +18,11 @@ export default function B2BContact() {
   }
 
   return (
-    <section id="contact" className="py-10 lg:pt-12 lg:pb-10 bg-[#F4F8FC] border-b border-clarion-line">
-      <div className="container-main space-y-8">
+    <section id="contact" className="fullscreen-section bg-[#F4F8FC] border-b border-clarion-line">
+      <div className="container-main space-y-6 lg:space-y-7 pt-20 lg:pt-24 pb-8 lg:pb-10 my-auto">
+
+
+
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           {/* Left Description */}
           <div className="lg:col-span-5 space-y-5">

@@ -54,8 +54,11 @@ export default function BusinessArchitecture() {
   const currentStory = portfolioStories.find((s) => s.id === activeTab) || portfolioStories[0]
 
   return (
-    <section id="portfolio" className="lg:min-h-[calc(100vh-80px)] flex flex-col justify-center py-16 lg:py-24 bg-[#F8FAFC] border-b border-clarion-line transition-colors duration-700">
-      <div className="container-main space-y-8 lg:space-y-10 my-auto">
+    <section id="portfolio" className="fullscreen-section bg-[#F8FAFC] border-b border-clarion-line transition-colors duration-700">
+      <div className="container-main space-y-6 lg:space-y-7 pt-20 lg:pt-24 pb-8 lg:pb-10 my-auto">
+
+
+
 
         {/* Section Header */}
         <div className="max-w-3xl space-y-2">

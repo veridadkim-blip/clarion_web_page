@@ -91,7 +91,7 @@ export default function GrowthTechnology() {
   return (
     <section
       id="growth-technology"
-      className="lg:min-h-[calc(100vh-80px)] flex flex-col justify-center py-16 lg:py-24 bg-[#07152B] text-white border-b border-white/10 relative overflow-hidden"
+      className="fullscreen-section bg-[#07152B] text-white border-b border-white/10 relative overflow-hidden"
     >
       {/* Background Fine Technical Architecture Overlay */}
       <div className="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem]" />
@@ -101,7 +101,9 @@ export default function GrowthTechnology() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-3xl bg-[#1265E5]" />
       </div>
 
-      <div className="container-main relative z-10 space-y-8 lg:space-y-10 my-auto">
+      <div className="container-main relative z-10 space-y-5 lg:space-y-6 pt-20 lg:pt-24 pb-8 lg:pb-10 my-auto">
+
+
 
         
         {/* Section Header */}

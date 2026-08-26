@@ -24,8 +24,11 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[100svh] lg:min-h-screen flex flex-col justify-between overflow-hidden bg-[#07152B] text-white pt-28 lg:pt-32 pb-8 lg:pb-10"
+      className="fullscreen-section relative overflow-hidden bg-[#07152B] text-white pt-20 lg:pt-24 pb-6 lg:pb-8"
     >
+
+
+
       {/* 1. Background Video / WaveCanvas / Poster Container */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
         {!prefersReducedMotion && (
