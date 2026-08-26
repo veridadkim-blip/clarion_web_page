@@ -51,15 +51,15 @@ export default function GrowthTechnology() {
       <div className="container-main max-w-7xl lg:max-w-[1320px] space-y-6 lg:space-y-7 relative z-10 pt-20 lg:pt-24 pb-8 lg:pb-10 my-auto">
         
         {/* 1. Deep Navy Section Header (Scaled Headline & High Contrast) */}
-        <div className="border-b border-white/10 pb-4 text-left">
-          <span className="inline-flex items-center gap-2 text-[#37B7FF] font-mono font-bold text-xs tracking-widest uppercase border-b-2 border-[#37B7FF] pb-0.5">
+        <div className="border-b border-white/10 pb-4 lg:pb-5 text-left">
+          <span className="inline-flex items-center gap-2 text-[#37B7FF] font-mono font-bold text-xs tracking-widest uppercase border-b-2 border-[#37B7FF] pb-0.5 mb-2 lg:mb-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#37B7FF]" />
             GROWTH TECHNOLOGY · INTELLIGENCE EXPANSION
           </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-[48px] font-extrabold text-white leading-tight tracking-tight pt-1.5">
+          <h2 className="text-3xl sm:text-5xl lg:text-[48px] font-extrabold text-white leading-tight tracking-tight pt-1">
             From Data to Action.
           </h2>
-          <p className="text-sm sm:text-base text-white/90 font-semibold pt-1">
+          <p className="text-sm sm:text-base text-white/90 font-semibold leading-[1.52] pt-3 lg:pt-3.5">
             현장의 경험과 데이터를 지능형 모델 및 로직으로 확장합니다.
           </p>
         </div>

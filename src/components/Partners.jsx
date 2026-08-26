@@ -41,15 +41,15 @@ export default function Partners() {
         <div className="container-main max-w-7xl lg:max-w-[1320px] space-y-6 lg:space-y-7 relative z-10 pt-20 lg:pt-24 pb-8 lg:pb-10 my-auto">
 
           {/* 1. Section Editorial Header */}
-          <div className="border-b border-clarion-line/60 pb-4 text-left">
-            <span className="inline-flex items-center gap-2 text-[#1265E5] font-mono font-bold text-xs tracking-widest uppercase border-b-2 border-[#1265E5] pb-0.5">
+          <div className="border-b border-clarion-line/60 pb-4 lg:pb-5 text-left">
+            <span className="inline-flex items-center gap-2 text-[#1265E5] font-mono font-bold text-xs tracking-widest uppercase border-b-2 border-[#1265E5] pb-0.5 mb-2 lg:mb-2.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#1265E5]" />
               PROJECT EXPERIENCE · EXECUTION IN PRACTICE
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#142033] leading-tight tracking-tight pt-1.5">
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#142033] leading-[1.18] sm:leading-[1.2] tracking-tight pt-1">
               현장에서 쌓인 실행력이, <span className="text-[#1265E5]">다음 기술의 기반이 됩니다.</span>
             </h2>
-            <p className="text-sm sm:text-base text-[#334155] font-semibold pt-1">
+            <p className="text-sm sm:text-base text-[#334155] font-semibold leading-[1.52] pt-3 lg:pt-3.5">
               금융·보험 IT 및 대형 엔터프라이즈 환경에서 검증된 프로젝트 수행 경험과 실체 있는 실행 체계입니다.
             </p>
           </div>
@@ -188,15 +188,15 @@ export default function Partners() {
         <div className="container-main max-w-7xl lg:max-w-[1320px] space-y-5 lg:space-y-6 relative z-10 pt-20 lg:pt-24 pb-8 lg:pb-10 my-auto">
 
           {/* 1. Section Editorial Header */}
-          <div className="border-b border-clarion-line/60 pb-3.5 text-left">
-            <span className="inline-flex items-center gap-2 text-[#1265E5] font-mono font-bold text-xs tracking-widest uppercase border-b-2 border-[#1265E5] pb-0.5">
+          <div className="border-b border-clarion-line/60 pb-4 lg:pb-5 text-left">
+            <span className="inline-flex items-center gap-2 text-[#1265E5] font-mono font-bold text-xs tracking-widest uppercase border-b-2 border-[#1265E5] pb-0.5 mb-2 lg:mb-2.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#1265E5]" />
               R&D / IP · TECHNOLOGY ASSETS
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#142033] leading-tight tracking-tight pt-1.5">
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#142033] leading-[1.18] sm:leading-[1.2] tracking-tight pt-1">
               기술을 연구하고, <span className="text-[#1265E5]">자산으로 축적합니다.</span>
             </h2>
-            <p className="text-sm sm:text-base text-[#334155] font-semibold pt-1">
+            <p className="text-sm sm:text-base text-[#334155] font-semibold leading-[1.52] pt-3 lg:pt-3.5">
               공식 인정 기업부설연구소와 특허 출원을 바탕으로 기술 자산을 축적합니다.
             </p>
           </div>

@@ -60,15 +60,15 @@ export default function CoreBusiness() {
       <div className="container-main max-w-7xl lg:max-w-[1320px] space-y-6 lg:space-y-7 relative z-10 pt-20 lg:pt-24 pb-8 lg:pb-10 my-auto">
         
         {/* 1. Section Header (Scaled Headline & Higher Contrast Supporting Copy) */}
-        <div className="border-b border-clarion-line/60 pb-4 text-left">
-          <span className="inline-flex items-center gap-2 text-[#1265E5] font-mono font-bold text-xs tracking-widest uppercase border-b-2 border-[#1265E5] pb-0.5">
+        <div className="border-b border-clarion-line/60 pb-4 lg:pb-5 text-left">
+          <span className="inline-flex items-center gap-2 text-[#1265E5] font-mono font-bold text-xs tracking-widest uppercase border-b-2 border-[#1265E5] pb-0.5 mb-2 lg:mb-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#1265E5]" />
             CORE BUSINESS · EXECUTION ARCHITECTURE
           </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-[48px] font-extrabold text-[#142033] leading-tight tracking-tight pt-1.5">
+          <h2 className="text-3xl sm:text-5xl lg:text-[48px] font-extrabold text-[#142033] leading-tight tracking-tight pt-1">
             현장에서 검증되는 <span className="text-[#1265E5]">엔터프라이즈 IT 실행력.</span>
           </h2>
-          <p className="text-sm sm:text-base text-[#334155] font-semibold pt-1">
+          <p className="text-sm sm:text-base text-[#334155] font-semibold leading-[1.52] pt-3 lg:pt-3.5">
             금융·보험 IT와 대형 엔터프라이즈 환경을 아우르는 클라리온의 6단계 수행 아키텍처입니다.
           </p>
         </div>

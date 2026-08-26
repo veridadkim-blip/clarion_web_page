@@ -53,12 +53,12 @@ export default function BusinessArchitecture() {
       <div className="container-main max-w-7xl lg:max-w-[1280px] space-y-5 lg:space-y-6 pt-20 lg:pt-24 pb-8 lg:pb-10 my-auto">
 
         {/* 1. Clean Section Editorial Header */}
-        <div className="border-b border-clarion-line/60 pb-3.5 text-left">
-          <span className="inline-flex items-center gap-2 text-[#1265E5] font-mono font-bold text-xs tracking-widest uppercase border-b-2 border-[#1265E5] pb-0.5">
+        <div className="border-b border-clarion-line/60 pb-4 lg:pb-5 text-left">
+          <span className="inline-flex items-center gap-2 text-[#1265E5] font-mono font-bold text-xs tracking-widest uppercase border-b-2 border-[#1265E5] pb-0.5 mb-2 lg:mb-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#1265E5]" />
             BUSINESS PORTFOLIO · EVOLUTION ROADMAP
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#142033] leading-tight tracking-tight pt-1.5">
+          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#142033] leading-tight tracking-tight pt-1">
             검증된 실행력에서, <span className="text-[#1265E5]">미래 기술로.</span>
           </h2>
         </div>
