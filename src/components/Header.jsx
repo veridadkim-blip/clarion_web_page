@@ -29,20 +29,25 @@ export default function Header() {
       id="header"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-clarion-line/80 py-3.5'
-          : 'bg-gradient-to-b from-[#07152B]/90 via-[#07152B]/60 to-transparent py-5'
+          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-clarion-line/80 py-3'
+          : 'bg-gradient-to-b from-[#07152B]/90 via-[#07152B]/60 to-transparent pt-5 lg:pt-[28px] pb-4'
       }`}
     >
       <div className="container-main">
         <nav className="flex items-center justify-between" aria-label="메인 네비게이션">
-          {/* Logo: CLARION English Wordmark with dynamic high contrast */}
+          {/* Logo: Official CLARION Symbol (/brand/clarion-symbol.png) + Wordmark */}
           <a
             href="#"
-            className="flex items-center gap-2 group focus:outline-none focus:ring-2 focus:ring-clarion-blue/50 rounded-lg p-1"
-            aria-label="CLARION 홈으로 이동"
+            className="inline-flex items-center gap-2.5 focus:outline-none"
+            aria-label="CLARION 홈"
           >
+            <img
+              src="/brand/clarion-symbol.png"
+              alt=""
+              className="h-[24px] sm:h-[28px] w-auto object-contain shrink-0"
+            />
             <span
-              className={`text-2xl font-extrabold font-mono tracking-wider transition-colors duration-300 ${
+              className={`font-mono font-extrabold text-lg sm:text-xl tracking-[0.14em] uppercase transition-colors duration-300 leading-none ${
                 isScrolled ? 'text-[#07152B]' : 'text-white'
               }`}
             >

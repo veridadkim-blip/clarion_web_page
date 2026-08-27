@@ -24,11 +24,8 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="fullscreen-section relative overflow-hidden bg-[#07152B] text-white pt-20 lg:pt-24 pb-6 lg:pb-8"
+      className="fullscreen-section relative overflow-hidden bg-[#07152B] text-white pt-24 lg:pt-[136px] pb-6 lg:pb-8 flex flex-col justify-between"
     >
-
-
-
       {/* 1. Background Video / WaveCanvas / Poster Container */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
         {!prefersReducedMotion && (
@@ -51,7 +48,7 @@ export default function Hero() {
               </video>
             )}
 
-            {/* Mobile Video Source (1080x1920) - Full Mobile Height, Positioned 72% 40%, Scale 1.10 */}
+            {/* Mobile Video Source (1080x1920) */}
             {!hasMobileError && (
               <video
                 autoPlay
@@ -71,13 +68,12 @@ export default function Hero() {
           </>
         )}
 
-        {/* Fallback Motion WaveCanvas (Used if videos are loading/missing/errored or reduced motion) */}
+        {/* Fallback Motion WaveCanvas */}
         {(!isVideoActive || prefersReducedMotion) && (
           <WaveCanvas />
         )}
 
         {/* Static Fallback Poster Layer */}
-        {/* Desktop Poster Image */}
         <div
           className={`hidden md:block absolute inset-0 bg-cover bg-center lg:bg-right transition-opacity duration-1000 pointer-events-none ${
             isDesktopLoaded && !hasDesktopError && !prefersReducedMotion ? 'opacity-0' : 'opacity-60'
@@ -85,7 +81,6 @@ export default function Hero() {
           style={{ backgroundImage: 'url("/images/clarion-wave-desktop.jpg")' }}
         />
 
-        {/* Mobile Poster Image (Maintained while mobile mp4 is absent - Positioned 72% 40%, Scale 1.10) */}
         <div
           className={`md:hidden absolute inset-0 bg-cover transition-opacity duration-1000 pointer-events-none ${
             isMobileLoaded && !hasMobileError && !prefersReducedMotion ? 'opacity-0' : 'opacity-70'
@@ -99,20 +94,21 @@ export default function Hero() {
         />
       </div>
 
-      {/* 2. Precision Gradient Overlay (Left Deep Navy Margin -> Right Wave Clarity) */}
+      {/* 2. Precision Gradient Overlay */}
       <div className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[#07152B] via-[#07152B]/85 to-transparent z-10 pointer-events-none" />
-
-      {/* Refined Horizontal Gradient: 0-38% Deep Navy Solid (0.96) -> 40-55% Smooth Fade -> 65-100% Completely Clear for Wave */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(7,21,43,0.96)_0%,rgba(7,21,43,0.90)_38%,rgba(7,21,43,0.35)_55%,rgba(7,21,43,0.0)_75%)] z-10 pointer-events-none" />
-
-      {/* Mobile Vertical Gradient Protection */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#07152B] via-[#07152B]/80 to-transparent md:hidden z-10 pointer-events-none" />
 
-      {/* 3. Hero Main Content Container (Shifted 140px Left on Desktop, Visual 70-80% / Text 20-30%) */}
+      {/* 3. Hero Main Content Container */}
       <div className="container-main relative z-20 flex-1 flex flex-col justify-center py-6 lg:py-8">
         <div className="max-w-xl lg:max-w-[560px] xl:max-w-[620px] space-y-5 sm:space-y-6 lg:space-y-8 text-left lg:-translate-x-[140px]">
-          {/* Top Label */}
-          <div className="inline-flex items-center gap-2 bg-[#37B7FF]/10 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full border border-[#37B7FF]/25">
+          {/* Top Label with Official Clarion Symbol */}
+          <div className="inline-flex items-center gap-2.5 bg-[#37B7FF]/10 px-3.5 py-1.5 rounded-full border border-[#37B7FF]/25">
+            <img
+              src="/brand/clarion-symbol.png"
+              alt=""
+              className="h-[16px] sm:h-[18px] w-auto object-contain shrink-0"
+            />
             <span className="text-[11px] sm:text-xs font-mono font-bold tracking-widest text-[#37B7FF] uppercase">
               CLARION · AI DATA CLOUD PLATFORM
             </span>
@@ -126,7 +122,7 @@ export default function Hero() {
             </h1>
           </div>
 
-          {/* English Sub Message (Refined font size & tracking for mobile single-line clarity) */}
+          {/* English Sub Message */}
           <div className="pt-1 sm:pt-2">
             <div className="w-10 sm:w-12 h-1 bg-[#37B7FF] mb-2 sm:mb-3 rounded-full" />
             <p className="text-xs sm:text-lg md:text-xl font-mono text-[#37B7FF] font-semibold tracking-normal sm:tracking-wide whitespace-nowrap sm:whitespace-normal">
@@ -159,14 +155,12 @@ export default function Hero() {
           className="flex flex-col items-center gap-2 text-white/70 hover:text-[#37B7FF] transition-colors text-[10px] font-mono tracking-widest uppercase"
           aria-label="아래 섹션으로 스크롤"
         >
-          <div className="w-5 h-8 rounded-full border border-white/40 flex justify-center pt-1.5 shadow-sm">
+          <span>SCROLL DOWN</span>
+          <div className="w-4 h-7 rounded-full border-2 border-white/30 flex justify-center pt-1">
             <div className="w-1 h-2 rounded-full bg-[#37B7FF] animate-bounce" />
           </div>
-          <span>SCROLL STORYTELLING</span>
         </a>
       </div>
     </section>
   )
 }
-
-

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" fill="none">
+  <!-- Official CLARION Symbol + Wordmark Combo -->
+  <g id="clarion-symbol">
+    <path
+      d="M16.5 8.5C10.701 8.5 6 13.201 6 19C6 24.799 10.701 29.5 16.5 29.5C20.125 29.5 23.3 27.662 25.187 24.875C26.962 26.505 29.352 27.5 32 27.5C37.247 27.5 41.5 23.247 41.5 18C41.5 12.753 37.247 8.5 32 8.5C28.848 8.5 26.068 10.038 24.312 12.406C22.443 10.008 19.645 8.5 16.5 8.5Z"
+      fill="url(#clarion-grad-full)"
+    />
+    <circle cx="16.5" cy="19" r="5.5" fill="#FFFFFF" fill-opacity="0.25" />
+    <circle cx="32" cy="18" r="4.5" fill="#FFFFFF" fill-opacity="0.3" />
+  </g>
+  <!-- Wordmark Text CLARION -->
+  <text x="52" y="27" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="21" letter-spacing="2.5" fill="#142033">CLARION</text>
+  <defs>
+    <linearGradient id="clarion-grad-full" x1="6" y1="29.5" x2="41.5" y2="8.5" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0052CC" />
+      <stop offset="0.5" stop-color="#1265E5" />
+      <stop offset="1" stop-color="#37B7FF" />
+    </linearGradient>
+  </defs>
+</svg>
