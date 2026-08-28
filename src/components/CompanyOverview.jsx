@@ -18,7 +18,7 @@ export default function CompanyOverview() {
           
           {/* Editorial Corporate Portrait Image (Clean, No Overlay, Scaled Up ~10-12%) */}
           <div className="lg:col-span-5 order-1 lg:order-1 relative">
-            <div className="relative rounded-lg overflow-hidden border border-clarion-line/70 bg-[#07152B] shadow-sm">
+            <div className="relative rounded-lg overflow-hidden border border-clarion-line/70 bg-[#F8FAFC] shadow-sm">
               <img
                 src="/images/ceo-portrait.jpg"
                 alt="㈜클라리온 대표이사 김동욱"
@@ -32,7 +32,7 @@ export default function CompanyOverview() {
             
             {/* 1. Main Philosophy Scaled Headline */}
             <div className="space-y-3 border-b border-clarion-line/80 pb-6">
-              <h2 className="text-3xl sm:text-5xl lg:text-[54px] font-extrabold text-[#142033] leading-[1.14] tracking-tight">
+              <h2 className="text-3xl sm:text-5xl lg:text-[54px] font-extrabold text-[#142033] leading-[1.22] lg:leading-[1.22] tracking-tight">
                 사람을 이롭게 하는 기술,
                 <br />
                 <span className="text-[#1265E5]">책임 있게 성장하는 기업.</span>
