@@ -20,7 +20,7 @@ export default function B2BContact() {
 
   return (
     <section id="contact" className="fullscreen-section bg-[#F8FAFC] text-[#142033] relative overflow-hidden border-b border-clarion-line/60">
-      <div className="container-main max-w-7xl lg:max-w-[1320px] relative z-10 space-y-6 lg:space-y-7 pt-16 lg:pt-[84px] pb-6 lg:pb-8 my-auto">
+      <div className="container-main max-w-7xl lg:max-w-[1320px] relative z-10 space-y-5 lg:space-y-6 pt-12 lg:pt-[72px] pb-6 lg:pb-8 my-auto">
 
         {/* 1. Section Header (Headline Internal Spacing Refined) */}
         <div className="border-b border-clarion-line/60 pb-4 lg:pb-5 text-left">
@@ -211,16 +211,6 @@ export default function B2BContact() {
             </form>
           </div>
 
-        </div>
-
-        {/* Integrated Compact Corporate Footer */}
-        <div className="pt-2 border-t border-clarion-line/40 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] font-mono text-clarion-muted">
-          <div className="flex items-center gap-2">
-            <span className="font-bold text-[#142033]">주식회사 클라리온</span>
-            <span>·</span>
-            <span>대표이사 {companyFacts.ceoName}</span>
-          </div>
-          <p>© 2026 {companyFacts.companyLegalName}. All rights reserved.</p>
         </div>
 
       </div>

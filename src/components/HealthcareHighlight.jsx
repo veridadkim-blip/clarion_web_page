@@ -112,13 +112,15 @@ export default function HealthcareHighlight() {
             
             {/* Phone Top Header (Reduced Top Padding) */}
             <div className="flex items-center justify-between border-b border-emerald-900/10 pb-2">
-              <div className="flex items-center gap-2">
-                <div className="w-5.5 h-5.5 rounded-md bg-[#1265E5] text-white flex items-center justify-center font-mono font-black text-xs">
-                  AI
-                </div>
-                <div>
-                  <h3 className="text-xs font-black text-[#142033]">HanSaengAI</h3>
-                  <p className="text-[9px] font-mono text-emerald-800 font-bold">LIFESTYLE HEALTH MOBILE UI</p>
+              <div className="flex items-center gap-2.5">
+                <img
+                  src="/images/brand/hansaeng-ai-symbol.png"
+                  alt="HanSaengAI"
+                  className="w-7 h-7 sm:w-[29px] sm:h-[29px] object-contain shrink-0"
+                />
+                <div className="space-y-0.5 text-left">
+                  <h3 className="text-xs sm:text-[13px] font-black text-[#142033] tracking-tight leading-tight">HanSaengAI</h3>
+                  <p className="text-[9px] font-mono text-emerald-800 font-bold leading-none tracking-wide">LIFESTYLE HEALTH MOBILE UI</p>
                 </div>
               </div>
               <span className="text-[10px] font-mono text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 font-bold">
