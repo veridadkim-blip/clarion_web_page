@@ -57,7 +57,7 @@ export default function CoreBusiness() {
 
   return (
     <section id="core-business" className="fullscreen-section bg-[#F8FAFC] border-b border-clarion-line/40 text-[#142033] relative overflow-hidden">
-      <div className="container-main max-w-7xl lg:max-w-[1320px] space-y-6 lg:space-y-7 relative z-10 pt-20 lg:pt-24 pb-8 lg:pb-10 my-auto">
+      <div className="container-main max-w-7xl lg:max-w-[1320px] space-y-6 lg:space-y-7 relative z-10 pt-14 lg:pt-[64px] pb-6 lg:pb-8 my-auto">
         
         {/* 1. Section Header (Scaled Headline & Higher Contrast Supporting Copy) */}
         <div className="border-b border-clarion-line/60 pb-4 lg:pb-5 text-left">
@@ -90,14 +90,14 @@ export default function CoreBusiness() {
           </div>
 
           {/* Desktop Horizontal Architecture Rail (Scaled Up ~10-12%) */}
-          <div className="hidden lg:block relative py-7">
+          <div className="hidden lg:block relative py-8">
 
             {/* Continuous Flow Connection Line */}
-            <div className="absolute top-[36px] left-[5%] right-[5%] h-[2px] bg-clarion-line/80 z-0">
+            <div className="absolute top-[42px] left-[5%] right-[5%] h-[2px] bg-clarion-line/80 z-0">
               <div className="absolute top-0 bottom-0 left-0 w-36 bg-gradient-to-r from-transparent via-[#1265E5] to-transparent animate-[pulseLine_3s_linear_infinite]" />
             </div>
 
-            <div className="grid grid-cols-6 gap-3 relative z-10">
+            <div className="grid grid-cols-6 gap-3.5 relative z-10">
               {archNodes.map((node) => {
                 const isSelected = activeNode.id === node.id
                 const isCoreSystem = node.id === 'financial' || node.id === 'enterprise' || node.id === 'cloud'
@@ -110,7 +110,7 @@ export default function CoreBusiness() {
                   >
                     {/* Flow Node Indicator Dot (Scaled Dot) */}
                     <div
-                      className={`w-7 h-7 rounded-full flex items-center justify-center font-mono text-xs font-extrabold transition-all duration-300 ${
+                      className={`w-8.5 h-8.5 rounded-full flex items-center justify-center font-mono text-xs sm:text-sm font-extrabold transition-all duration-300 ${
                         isSelected
                           ? 'bg-[#1265E5] text-white scale-125 shadow-md ring-4 ring-[#1265E5]/20'
                           : 'bg-white border-2 border-clarion-line text-[#68758A] group-hover:border-[#1265E5] group-hover:text-[#1265E5]'
@@ -127,7 +127,7 @@ export default function CoreBusiness() {
                         STEP {node.step}
                       </span>
                       <h3
-                        className={`text-xs sm:text-sm font-extrabold tracking-tight leading-snug transition-colors ${
+                        className={`text-xs sm:text-[15px] font-extrabold tracking-tight leading-snug transition-colors ${
                           isSelected
                             ? 'text-[#1265E5] scale-105'
                             : isCoreSystem
@@ -137,7 +137,7 @@ export default function CoreBusiness() {
                       >
                         {node.title}
                       </h3>
-                      <p className="text-[11px] font-mono text-clarion-muted truncate max-w-[145px] mx-auto">
+                      <p className="text-xs font-mono text-clarion-muted truncate max-w-[155px] mx-auto">
                         {node.keywords}
                       </p>
                     </div>
@@ -177,8 +177,8 @@ export default function CoreBusiness() {
             })}
           </div>
 
-          {/* Active Node 1-Line Clean Dynamic Description (Scaled Typography) */}
-          <div className="py-3.5 border-t border-b border-clarion-line/60 flex items-center justify-between text-left">
+          {/* Active Node 1-Line Clean Dynamic Description (Scaled Typography & Card) */}
+          <div className="py-4 px-4 sm:px-5 bg-white rounded-xl border border-clarion-line/60 shadow-xs flex items-center justify-between text-left">
             <div className="flex flex-wrap items-center gap-2 sm:gap-3">
               <span className="text-xs sm:text-sm font-mono font-extrabold text-[#1265E5] uppercase tracking-wider shrink-0">
                 {activeNode.step} {activeNode.title} —

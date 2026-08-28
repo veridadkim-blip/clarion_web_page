@@ -18,7 +18,7 @@ export default function CompanyOverview() {
           
           {/* Editorial Corporate Portrait Image (Clean, No Overlay, Scaled Up ~10-12%) */}
           <div className="lg:col-span-5 order-1 lg:order-1 relative">
-            <div className="relative rounded-lg overflow-hidden border border-clarion-line/70 bg-[#F8FAFC] shadow-sm">
+            <div className="relative rounded-lg overflow-hidden border border-clarion-line/70 bg-[#F4F7FB] shadow-sm">
               <img
                 src="/images/ceo-portrait.jpg"
                 alt="㈜클라리온 대표이사 김동욱"
