@@ -81,21 +81,21 @@ export default function HealthcareHighlight() {
                 </span>
               </div>
 
-              {/* Large Human-Centered Photo */}
+              {/* Large Human-Centered Real Class Photo */}
               <div className="relative rounded-lg overflow-hidden border border-emerald-600/20 aspect-[16/9.5] group">
                 <img
-                  src="/images/healthcare-office-taichi.jpg"
-                  alt="사무실에서 생활건강PT를 함께 수행하는 사람들"
+                  src="/images/healthcare-actual-class.jpg"
+                  alt="실제 제자리태극권 & 생활건강PT 그룹수업 현장"
                   className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#07152B]/75 via-transparent to-transparent pointer-events-none" />
 
                 <div className="absolute bottom-3 left-3 right-3 text-white flex items-center justify-between z-10">
                   <span className="text-[11px] font-mono font-bold text-white bg-black/60 backdrop-blur-md px-2.5 py-0.5 rounded">
-                    사무실 임직원 제자리태극권 · 생활건강PT 일상 실천
+                    실제 그룹수업 현장 · 제자리태극권 & 생활건강PT
                   </span>
                   <span className="text-[10px] font-mono text-white/80 hidden sm:inline-block">
-                    DAILY LIFESTYLE INTERVENTION
+                    REAL CLASS EXPERIENCE
                   </span>
                 </div>
               </div>
