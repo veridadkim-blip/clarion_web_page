@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-# Sitemap URL will be appended upon production domain deployment
+Sitemap: https://clarion.ai.kr/sitemap.xml
