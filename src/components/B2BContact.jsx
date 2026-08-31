@@ -1,21 +1,73 @@
 import React, { useState } from 'react'
-import { ArrowRight } from 'lucide-react'
-import { companyFacts } from '../data/companyContent'
+import { ArrowRight, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 
 export default function B2BContact() {
   const [formData, setFormData] = useState({
-    companyName: '',
-    contactName: '',
+    company: '',
+    name: '',
     email: '',
     phone: '',
-    interestArea: 'Enterprise IT / SI',
+    inquiryType: 'Enterprise IT / SI',
     message: '',
     privacyConsent: false,
+    botField: '',
   })
 
-  const handleSubmit = (e) => {
+  const [submitting, setSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState('idle') // 'idle' | 'success' | 'error'
+  const [errorMessage, setErrorMessage] = useState('')
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // PROTOTYPE ONLY: Backend connection pending production phase
+
+    if (!formData.privacyConsent) {
+      setSubmitStatus('error')
+      setErrorMessage('개인정보 수집 및 이용 동의 [필수] 항목을 체크해 주세요.')
+      return
+    }
+
+    if (formData.botField) {
+      // Honeypot triggered
+      setSubmitStatus('success')
+      return
+    }
+
+    setSubmitting(true)
+    setSubmitStatus('idle')
+    setErrorMessage('')
+
+    try {
+      const form = e.target
+      const bodyData = new URLSearchParams(new FormData(form)).toString()
+
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: bodyData,
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({
+          company: '',
+          name: '',
+          email: '',
+          phone: '',
+          inquiryType: 'Enterprise IT / SI',
+          message: '',
+          privacyConsent: false,
+          botField: '',
+        })
+      } else {
+        setSubmitStatus('error')
+        setErrorMessage('문의 접수 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.')
+      }
+    } catch (err) {
+      setSubmitStatus('error')
+      setErrorMessage('문의 접수 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -86,129 +138,215 @@ export default function B2BContact() {
             </div>
           </div>
 
-          {/* RIGHT 55%: Clean Flat B2B Form */}
+          {/* RIGHT 55%: Clean Flat B2B Form with Netlify Forms Integration */}
           <div className="lg:col-span-7 bg-white rounded-xl p-5 sm:p-6 border border-clarion-line/70 shadow-xs flex flex-col justify-between space-y-4">
-            <form onSubmit={handleSubmit} className="space-y-3.5">
-              <div className="flex items-center justify-between border-b border-clarion-line/40 pb-2">
-                <h3 className="text-sm font-extrabold text-[#142033]">B2B 프로젝트 문의 작성</h3>
-                <span className="text-[10px] font-mono text-clarion-muted">* 필수 입력 항목</span>
-              </div>
-
-              {/* Row 1: Company & Contact Name */}
-              <div className="grid sm:grid-cols-2 gap-3">
-                <div>
-                  <label className="block text-xs font-extrabold text-[#142033] mb-1">
-                    회사 / 기관명 <span className="text-[#1265E5]">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="회사 또는 기관명을 입력해주세요"
-                    value={formData.companyName}
-                    onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                    className="w-full bg-[#F8FAFC] border border-clarion-line/80 rounded-lg px-3 py-2 text-xs text-[#142033] placeholder:text-clarion-muted focus:outline-none focus:border-[#1265E5]"
-                  />
+            
+            {/* Inline Submission Success Card */}
+            {submitStatus === 'success' ? (
+              <div className="p-5 bg-emerald-50 border border-emerald-300 rounded-xl text-emerald-950 text-xs space-y-2 text-left my-auto shadow-xs">
+                <div className="flex items-center gap-2.5 font-extrabold text-sm text-emerald-900">
+                  <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0" />
+                  <span>문의가 정상적으로 접수되었습니다.</span>
                 </div>
-                <div>
-                  <label className="block text-xs font-extrabold text-[#142033] mb-1">
-                    담당자명 <span className="text-[#1265E5]">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="담당자명을 입력해주세요"
-                    value={formData.contactName}
-                    onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
-                    className="w-full bg-[#F8FAFC] border border-clarion-line/80 rounded-lg px-3 py-2 text-xs text-[#142033] placeholder:text-clarion-muted focus:outline-none focus:border-[#1265E5]"
-                  />
+                <p className="text-emerald-800 font-medium pl-7 leading-relaxed">
+                  확인 후 담당자가 입력해주신 이메일(<strong className="font-mono text-emerald-950">{formData.email}</strong>)로 신속히 연락드리겠습니다.
+                </p>
+                <div className="pt-2 pl-7">
+                  <button
+                    type="button"
+                    onClick={() => setSubmitStatus('idle')}
+                    className="text-[11px] font-bold text-emerald-700 underline hover:text-emerald-950"
+                  >
+                    추가 문의 작성하기
+                  </button>
                 </div>
               </div>
-
-              {/* Row 2: Email & Phone */}
-              <div className="grid sm:grid-cols-2 gap-3">
-                <div>
-                  <label className="block text-xs font-extrabold text-[#142033] mb-1">
-                    이메일 주소 <span className="text-[#1265E5]">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    placeholder="name@company.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-[#F8FAFC] border border-clarion-line/80 rounded-lg px-3 py-2 text-xs text-[#142033] placeholder:text-clarion-muted focus:outline-none focus:border-[#1265E5]"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-extrabold text-[#142033] mb-1">
-                    연락처 <span className="text-clarion-muted font-normal text-[10px]">(선택)</span>
-                  </label>
-                  <input
-                    type="tel"
-                    placeholder="연락처를 입력해주세요"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full bg-[#F8FAFC] border border-clarion-line/80 rounded-lg px-3 py-2 text-xs text-[#142033] placeholder:text-clarion-muted focus:outline-none focus:border-[#1265E5]"
-                  />
-                </div>
-              </div>
-
-              {/* Category Dropdown */}
-              <div>
-                <label className="block text-xs font-extrabold text-[#142033] mb-1">
-                  문의 분야 <span className="text-[#1265E5]">*</span>
-                </label>
-                <select
-                  value={formData.interestArea}
-                  onChange={(e) => setFormData({ ...formData, interestArea: e.target.value })}
-                  className="w-full bg-[#F8FAFC] border border-clarion-line/80 rounded-lg px-3 py-2 text-xs text-[#142033] focus:outline-none focus:border-[#1265E5]"
-                >
-                  <option value="Enterprise IT / SI">Enterprise IT / SI</option>
-                  <option value="AI / Data">AI / Data</option>
-                  <option value="Healthcare AI">Healthcare AI</option>
-                  <option value="R&D / Technology Collaboration">R&D / Technology Collaboration</option>
-                  <option value="General Inquiry">General Inquiry</option>
-                </select>
-              </div>
-
-              {/* Message Textarea */}
-              <div>
-                <label className="block text-xs font-extrabold text-[#142033] mb-1">
-                  문의 내용 <span className="text-[#1265E5]">*</span>
-                </label>
-                <textarea
-                  rows={3}
-                  required
-                  placeholder="프로젝트 목적과 필요한 내용을 간단히 적어주세요."
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-[#F8FAFC] border border-clarion-line/80 rounded-lg p-3 text-xs text-[#142033] placeholder:text-clarion-muted focus:outline-none focus:border-[#1265E5] resize-none"
-                />
-              </div>
-
-              {/* Privacy Consent Checkbox */}
-              <div className="flex items-center gap-2 pt-0.5">
-                <input
-                  type="checkbox"
-                  id="privacyConsent"
-                  checked={formData.privacyConsent}
-                  onChange={(e) => setFormData({ ...formData, privacyConsent: e.target.checked })}
-                  className="rounded border-clarion-line text-[#1265E5] focus:ring-0 w-3.5 h-3.5"
-                />
-                <label htmlFor="privacyConsent" className="text-[11px] text-clarion-muted cursor-pointer">
-                  개인정보 수집 및 이용 동의 (문의 접수 및 회신 목적)
-                </label>
-              </div>
-
-              {/* Submit CTA Button */}
-              <button
-                type="submit"
-                className="w-full py-3 bg-[#1265E5] text-white font-extrabold text-xs sm:text-sm rounded-lg hover:bg-blue-600 transition-colors flex items-center justify-center gap-2 group"
+            ) : (
+              <form
+                name="clarion-b2b-inquiry"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                onSubmit={handleSubmit}
+                className="space-y-3.5"
               >
-                <span>프로젝트 문의하기</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </button>
-            </form>
+                {/* Hidden Netlify form-name input */}
+                <input type="hidden" name="form-name" value="clarion-b2b-inquiry" />
+
+                {/* Accessibility-safe visually hidden Honeypot field */}
+                <p className="hidden" aria-hidden="true">
+                  <label>
+                    Don't fill this out if you're human:
+                    <input
+                      name="bot-field"
+                      value={formData.botField}
+                      onChange={(e) => setFormData({ ...formData, botField: e.target.value })}
+                    />
+                  </label>
+                </p>
+
+                <div className="flex items-center justify-between border-b border-clarion-line/40 pb-2">
+                  <h3 className="text-sm font-extrabold text-[#142033]">B2B 프로젝트 문의 작성</h3>
+                  <span className="text-[10px] font-mono text-clarion-muted">* 필수 입력 항목</span>
+                </div>
+
+                {/* Inline Submission Error Notification */}
+                {submitStatus === 'error' && (
+                  <div className="p-3 bg-rose-50 border border-rose-300 rounded-lg text-rose-900 text-xs flex items-start gap-2 text-left">
+                    <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                    <p className="font-bold">{errorMessage || '문의 접수 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.'}</p>
+                  </div>
+                )}
+
+                {/* Row 1: Company & Contact Name */}
+                <div className="grid sm:grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-xs font-extrabold text-[#142033] mb-1">
+                      회사 / 기관명 <span className="text-[#1265E5]">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="company"
+                      required
+                      placeholder="회사 또는 기관명을 입력해주세요"
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                      className="w-full bg-[#F8FAFC] border border-clarion-line/80 rounded-lg px-3 py-2 text-xs text-[#142033] placeholder:text-clarion-muted focus:outline-none focus:border-[#1265E5]"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-extrabold text-[#142033] mb-1">
+                      담당자명 <span className="text-[#1265E5]">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      placeholder="담당자명을 입력해주세요"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full bg-[#F8FAFC] border border-clarion-line/80 rounded-lg px-3 py-2 text-xs text-[#142033] placeholder:text-clarion-muted focus:outline-none focus:border-[#1265E5]"
+                    />
+                  </div>
+                </div>
+
+                {/* Row 2: Email & Phone */}
+                <div className="grid sm:grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-xs font-extrabold text-[#142033] mb-1">
+                      이메일 주소 <span className="text-[#1265E5]">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      placeholder="name@company.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full bg-[#F8FAFC] border border-clarion-line/80 rounded-lg px-3 py-2 text-xs text-[#142033] placeholder:text-clarion-muted focus:outline-none focus:border-[#1265E5]"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-extrabold text-[#142033] mb-1">
+                      연락처 <span className="text-clarion-muted font-normal text-[10px]">(선택)</span>
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="연락처를 입력해주세요"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full bg-[#F8FAFC] border border-clarion-line/80 rounded-lg px-3 py-2 text-xs text-[#142033] placeholder:text-clarion-muted focus:outline-none focus:border-[#1265E5]"
+                    />
+                  </div>
+                </div>
+
+                {/* Category Dropdown */}
+                <div>
+                  <label className="block text-xs font-extrabold text-[#142033] mb-1">
+                    문의 분야 <span className="text-[#1265E5]">*</span>
+                  </label>
+                  <select
+                    name="inquiryType"
+                    value={formData.inquiryType}
+                    onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })}
+                    className="w-full bg-[#F8FAFC] border border-clarion-line/80 rounded-lg px-3 py-2 text-xs text-[#142033] focus:outline-none focus:border-[#1265E5]"
+                  >
+                    <option value="Enterprise IT / SI">Enterprise IT / SI</option>
+                    <option value="AI / Data">AI / Data</option>
+                    <option value="Healthcare AI">Healthcare AI</option>
+                    <option value="R&D / Technology Collaboration">R&D / Technology Collaboration</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                  </select>
+                </div>
+
+                {/* Message Textarea */}
+                <div>
+                  <label className="block text-xs font-extrabold text-[#142033] mb-1">
+                    문의 내용 <span className="text-[#1265E5]">*</span>
+                  </label>
+                  <textarea
+                    name="message"
+                    rows={3}
+                    required
+                    placeholder="프로젝트 목적과 필요한 내용을 간단히 적어주세요."
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full bg-[#F8FAFC] border border-clarion-line/80 rounded-lg p-3 text-xs text-[#142033] placeholder:text-clarion-muted focus:outline-none focus:border-[#1265E5] resize-none"
+                  />
+                </div>
+
+                {/* Privacy Consent Disclosure & Checkbox */}
+                <div className="space-y-2 pt-1">
+                  {/* Privacy Disclosure Box */}
+                  <div className="bg-[#F8FAFC] p-2.5 rounded-lg border border-clarion-line/60 space-y-1 text-[10px] text-clarion-muted leading-relaxed">
+                    <div className="flex items-center justify-between font-bold text-[#142033] text-[11px] pb-1 border-b border-clarion-line/40">
+                      <span>개인정보 수집·이용 안내</span>
+                      <span className="font-mono text-[9px] text-[#1265E5] font-semibold">[필수]</span>
+                    </div>
+                    <p><strong className="text-[#334155]">수집·이용 목적:</strong> B2B 프로젝트 문의 접수, 내용 확인 및 회신</p>
+                    <p><strong className="text-[#334155]">수집 항목:</strong> 회사/기관명, 담당자명, 이메일 주소, 연락처(선택), 문의 분야, 문의 내용</p>
+                    <p><strong className="text-[#334155]">보유·이용 기간:</strong> 문의 접수일로부터 1년</p>
+                    <p><strong className="text-[#334155]">동의 거부 안내:</strong> 개인정보 수집·이용에 동의하지 않을 권리가 있으나, 필수항목 수집에 동의하지 않을 경우 온라인 문의 접수가 제한될 수 있습니다.</p>
+                  </div>
+
+                  {/* Privacy Checkbox */}
+                  <div className="flex items-center gap-2 pt-0.5">
+                    <input
+                      type="checkbox"
+                      id="privacyConsent"
+                      name="privacyConsent"
+                      required
+                      checked={formData.privacyConsent}
+                      onChange={(e) => setFormData({ ...formData, privacyConsent: e.target.checked })}
+                      className="rounded border-clarion-line text-[#1265E5] focus:ring-0 w-3.5 h-3.5 cursor-pointer"
+                    />
+                    <label htmlFor="privacyConsent" className="text-[11px] text-[#142033] font-bold cursor-pointer">
+                      [필수] 개인정보 수집 및 이용에 동의합니다.
+                    </label>
+                  </div>
+                </div>
+
+                {/* Submit CTA Button */}
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="w-full py-3 bg-[#1265E5] text-white font-extrabold text-xs sm:text-sm rounded-lg hover:bg-blue-600 transition-colors flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {submitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <span>문의 접수 중...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>프로젝트 문의하기</span>
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </>
+                  )}
+                </button>
+              </form>
+            )}
           </div>
 
         </div>
@@ -217,5 +355,3 @@ export default function B2BContact() {
     </section>
   )
 }
-
-

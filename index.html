@@ -52,6 +52,23 @@
     </script>
   </head>
   <body>
+    <!-- Netlify Forms Static Detection Form for React SPA -->
+    <form
+      name="clarion-b2b-inquiry"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      hidden
+    >
+      <input name="company" />
+      <input name="name" />
+      <input name="email" />
+      <input name="phone" />
+      <input name="inquiryType" />
+      <textarea name="message"></textarea>
+      <input name="privacyConsent" />
+      <input name="bot-field" />
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
