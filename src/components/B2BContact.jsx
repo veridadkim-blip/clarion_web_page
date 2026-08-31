@@ -174,7 +174,19 @@ export default function B2BContact() {
                 <input type="hidden" name="form-name" value="clarion-b2b-inquiry" />
 
                 {/* Accessibility-safe visually hidden Honeypot field */}
-                <p className="hidden" aria-hidden="true">
+                <p
+                  style={{
+                    position: 'absolute',
+                    overflow: 'hidden',
+                    clip: 'rect(0 0 0 0)',
+                    height: '1px',
+                    width: '1px',
+                    margin: '-1px',
+                    padding: 0,
+                    border: 0,
+                  }}
+                  aria-hidden="true"
+                >
                   <label>
                     Don't fill this out if you're human:
                     <input
