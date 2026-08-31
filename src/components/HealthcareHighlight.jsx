@@ -23,7 +23,7 @@ export default function HealthcareHighlight() {
   return (
     <section
       id="healthcare"
-      className="fullscreen-section bg-[#F2FBF7] text-[#142033] relative overflow-hidden border-b border-clarion-line/60"
+      className="fullscreen-section bg-[#F2FBF7] text-[#142033] relative overflow-hidden border-b border-clarion-line/60 scroll-mt-[80px]"
     >
       {/* Background Natural Ambient Wave */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
@@ -38,16 +38,16 @@ export default function HealthcareHighlight() {
         </svg>
       </div>
 
-      <div className="container-main max-w-7xl lg:max-w-[1320px] relative z-10 space-y-4 lg:space-y-[18px] pt-24 lg:pt-[108px] pb-6 lg:pb-[28px] my-auto">
+      <div className="container-main max-w-7xl lg:max-w-[1320px] relative z-10 space-y-3 lg:space-y-[12px] pt-24 lg:pt-[128px] pb-4 lg:pb-[14px] my-auto">
 
         {/* 1. Section Editorial Header (Clean 2-Line Headline, No Orphaned "다.") */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-emerald-900/10 pb-3 text-left">
-          <div className="space-y-1.5 max-w-2xl">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-3.5 border-b border-emerald-900/10 pb-2 text-left">
+          <div className="space-y-0.5 max-w-2xl">
             <span className="inline-flex items-center gap-2 text-emerald-800 font-mono font-bold text-xs tracking-widest uppercase border-b-2 border-emerald-700 pb-0.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-700" />
               HEALTHCARE INNOVATION · HUMAN-CENTERED WELLNESS
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#142033] leading-[1.2] sm:leading-snug tracking-tight pt-1">
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#142033] leading-[1.2] sm:leading-snug tracking-tight pt-0">
               기술의 마지막은, <br />
               <span className="text-[#1265E5]">사람이어야 합니다.</span>
             </h2>
@@ -67,8 +67,8 @@ export default function HealthcareHighlight() {
         <div className="grid lg:grid-cols-12 gap-5 lg:gap-7 items-stretch text-left">
 
           {/* LEFT 55%: Large Editorial Human Visual (healthcare-office-taichi.jpg) */}
-          <div className="lg:col-span-7 bg-white rounded-xl p-4.5 sm:p-5 border border-emerald-600/20 shadow-sm flex flex-col justify-between space-y-3">
-            <div className="space-y-2.5">
+          <div className="lg:col-span-7 bg-white rounded-xl p-4 sm:p-4.5 border border-emerald-600/20 shadow-sm flex flex-col justify-between space-y-2.5">
+            <div className="space-y-2">
               <div className="flex items-center justify-between border-b border-emerald-900/10 pb-1.5">
                 <div className="flex items-center gap-2">
                   <Heart className="w-4 h-4 text-emerald-700" />
@@ -108,10 +108,10 @@ export default function HealthcareHighlight() {
           </div>
 
           {/* RIGHT 45%: HanSaengAI Mobile Mockup UI (Top Dead Space Reduced) */}
-          <div className="lg:col-span-5 bg-white rounded-xl p-4.5 sm:p-5 border border-emerald-600/20 shadow-sm flex flex-col justify-between space-y-3">
+          <div className="lg:col-span-5 bg-white rounded-xl p-4 sm:p-4.5 border border-emerald-600/20 shadow-sm flex flex-col justify-between space-y-2.5">
             
             {/* Phone Top Header (Reduced Top Padding) */}
-            <div className="flex items-center justify-between border-b border-emerald-900/10 pb-2">
+            <div className="flex items-center justify-between border-b border-emerald-900/10 pb-1.5">
               <div className="flex items-center gap-2.5">
                 <img
                   src="/images/brand/hansaeng-ai-symbol.png"
@@ -129,10 +129,10 @@ export default function HealthcareHighlight() {
             </div>
 
             {/* 4 Specified Mobile UI Screen Components */}
-            <div className="space-y-2 text-xs">
+            <div className="space-y-1.5 text-xs">
               
               {/* 1. TODAY 현재 상태 */}
-              <div className="bg-[#F7FCFA] p-2.5 rounded-lg border border-emerald-200 flex items-center justify-between">
+              <div className="bg-[#F7FCFA] p-2 rounded-lg border border-emerald-200 flex items-center justify-between">
                 <div className="space-y-0.5">
                   <span className="text-[9px] font-mono font-extrabold text-emerald-800 uppercase">TODAY</span>
                   <p className="font-extrabold text-[#142033]">현재 건강상태 이해</p>
@@ -143,7 +143,7 @@ export default function HealthcareHighlight() {
               </div>
 
               {/* 2. TODAY'S ROUTINE 오늘의 생활건강PT */}
-              <div className="bg-emerald-50/90 p-2.5 rounded-lg border border-emerald-400/50 flex items-center justify-between">
+              <div className="bg-emerald-50/90 p-2 rounded-lg border border-emerald-400/50 flex items-center justify-between">
                 <div className="space-y-0.5">
                   <span className="text-[9px] font-mono font-extrabold text-emerald-900 uppercase">TODAY'S ROUTINE</span>
                   <p className="font-extrabold text-[#142033]">오늘의 생활건강PT</p>
@@ -155,7 +155,7 @@ export default function HealthcareHighlight() {
               </div>
 
               {/* 3. PROGRESS 실천 기록 */}
-              <div className="bg-[#F7FCFA] p-2.5 rounded-lg border border-emerald-200 flex items-center justify-between">
+              <div className="bg-[#F7FCFA] p-2 rounded-lg border border-emerald-200 flex items-center justify-between">
                 <div className="space-y-0.5">
                   <span className="text-[9px] font-mono font-extrabold text-emerald-800 uppercase">PROGRESS</span>
                   <p className="font-extrabold text-[#142033]">실천 기록</p>
@@ -167,7 +167,7 @@ export default function HealthcareHighlight() {
               </div>
 
               {/* 4. REASSESSMENT 재평가 */}
-              <div className="bg-[#F7FCFA] p-2.5 rounded-lg border border-emerald-200 flex items-center justify-between">
+              <div className="bg-[#F7FCFA] p-2 rounded-lg border border-emerald-200 flex items-center justify-between">
                 <div className="space-y-0.5">
                   <span className="text-[9px] font-mono font-extrabold text-emerald-800 uppercase">REASSESSMENT</span>
                   <p className="font-extrabold text-[#142033]">주기적 재평가</p>
@@ -180,7 +180,7 @@ export default function HealthcareHighlight() {
 
             </div>
 
-            <div className="pt-2 border-t border-emerald-900/10 text-[10px] font-mono text-emerald-800 font-semibold flex items-center justify-between">
+            <div className="pt-1.5 border-t border-emerald-900/10 text-[10px] font-mono text-emerald-800 font-semibold flex items-center justify-between">
               <span>FOR ENTERPRISE · INSURANCE · PUBLIC SECTOR</span>
             </div>
           </div>
@@ -188,7 +188,7 @@ export default function HealthcareHighlight() {
         </div>
 
         {/* 3. 6-Step Lifestyle Health Journey (Thin Connected Line) */}
-        <div className="bg-white rounded-xl p-4 sm:p-5 border border-emerald-600/20 shadow-xs space-y-3">
+        <div className="bg-white rounded-xl p-3.5 sm:p-4 border border-emerald-600/20 shadow-xs space-y-2.5">
           <div className="flex items-center justify-between border-b border-emerald-900/10 pb-2">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-700" />
