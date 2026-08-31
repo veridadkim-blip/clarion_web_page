@@ -17,6 +17,12 @@ const healthJourneySteps = [
   { step: '06', title: '변화 확인' },
 ]
 
+/*
+ * HEALTHCARE AI LAYOUT FREEZE
+ * Owner approved final vertical composition.
+ * Do not alter spacing, sizing, alignment, or section positioning
+ * unless explicitly requested.
+ */
 export default function HealthcareHighlight() {
   const [activeStep, setActiveStep] = useState(2) // Default step: 03 생활건강PT
 
