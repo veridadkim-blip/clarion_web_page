@@ -37,32 +37,42 @@ export default function B2BContact() {
     setErrorMessage('')
 
     try {
-      const form = e.target
-      const bodyData = new URLSearchParams(new FormData(form)).toString()
+      const form = e.currentTarget || e.target
+      const formDataObj = new FormData(form)
 
-      const response = await fetch('/', {
+      // Guarantee form-name payload in request body
+      formDataObj.set('form-name', 'clarion-b2b-inquiry')
+
+      const bodyData = new URLSearchParams(formDataObj).toString()
+
+      const response = await fetch('/contact-submit.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: bodyData,
       })
 
-      if (response.ok) {
-        setSubmitStatus('success')
-        setFormData({
-          company: '',
-          name: '',
-          email: '',
-          phone: '',
-          inquiryType: 'Enterprise IT / SI',
-          message: '',
-          privacyConsent: false,
-          botField: '',
-        })
-      } else {
-        setSubmitStatus('error')
-        setErrorMessage('문의 접수 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.')
+      if (!response.ok) {
+        console.error(
+          'Netlify form submission failed:',
+          response.status,
+          response.statusText
+        )
+        throw new Error(`Netlify form submission failed: ${response.status}`)
       }
+
+      setSubmitStatus('success')
+      setFormData({
+        company: '',
+        name: '',
+        email: '',
+        phone: '',
+        inquiryType: 'Enterprise IT / SI',
+        message: '',
+        privacyConsent: false,
+        botField: '',
+      })
     } catch (err) {
+      console.error('B2B Contact form submission error:', err)
       setSubmitStatus('error')
       setErrorMessage('문의 접수 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.')
     } finally {
