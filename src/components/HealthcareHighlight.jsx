@@ -23,7 +23,7 @@ export default function HealthcareHighlight() {
   return (
     <section
       id="healthcare"
-      className="fullscreen-section bg-[#F2FBF7] text-[#142033] relative overflow-hidden border-b border-clarion-line/60"
+      className="fullscreen-section bg-[#F2FBF7] text-[#142033] relative overflow-hidden border-b border-clarion-line/60 scroll-mt-[80px]"
     >
       {/* Background Natural Ambient Wave */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
@@ -38,7 +38,7 @@ export default function HealthcareHighlight() {
         </svg>
       </div>
 
-      <div className="container-main max-w-7xl lg:max-w-[1320px] relative z-10 space-y-4 lg:space-y-[18px] pt-24 lg:pt-[108px] pb-6 lg:pb-[28px] my-auto">
+      <div className="container-main max-w-7xl lg:max-w-[1320px] relative z-10 space-y-3.5 lg:space-y-[16px] pt-24 lg:pt-[132px] pb-4 lg:pb-[16px] my-auto">
 
         {/* 1. Section Editorial Header (Clean 2-Line Headline, No Orphaned "다.") */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-emerald-900/10 pb-3 text-left">
