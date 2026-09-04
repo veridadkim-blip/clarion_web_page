@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import CompanyOverview from './components/CompanyOverview'
@@ -10,6 +11,46 @@ import B2BContact from './components/B2BContact'
 import Footer from './components/Footer'
 
 export default function App() {
+  useEffect(() => {
+    const updateMobileViewportVariables = () => {
+      const isMobile = window.innerWidth <= 767
+      if (isMobile) {
+        const vh = window.visualViewport ? window.visualViewport.height : window.innerHeight
+        const headerEl = document.getElementById('header')
+        const headerH = headerEl ? headerEl.getBoundingClientRect().height : 54
+
+        document.documentElement.style.setProperty('--clarion-mobile-vh', `${vh}px`)
+        document.documentElement.style.setProperty('--clarion-mobile-header-h', `${headerH}px`)
+      } else {
+        document.documentElement.style.removeProperty('--clarion-mobile-vh')
+        document.documentElement.style.removeProperty('--clarion-mobile-header-h')
+      }
+    }
+
+    updateMobileViewportVariables()
+
+    let rafId = null
+    const handleResize = () => {
+      if (rafId) cancelAnimationFrame(rafId)
+      rafId = requestAnimationFrame(updateMobileViewportVariables)
+    }
+
+    window.addEventListener('resize', handleResize)
+    window.addEventListener('orientationchange', handleResize)
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', handleResize)
+    }
+
+    return () => {
+      if (rafId) cancelAnimationFrame(rafId)
+      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('orientationchange', handleResize)
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener('resize', handleResize)
+      }
+    }
+  }, [])
+
   return (
     <div className="min-h-screen bg-clarion-light font-sans antialiased text-clarion-text selection:bg-clarion-blue selection:text-white">
       {/* Navigation Header */}
@@ -40,7 +81,6 @@ export default function App() {
         {/* 8. B2B CONTACT (B2B Project Consultation) */}
         <B2BContact />
       </main>
-
 
       {/* 9. FOOTER */}
       <Footer />

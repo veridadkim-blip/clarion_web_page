@@ -24,7 +24,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="fullscreen-section relative overflow-hidden bg-[#07152B] text-white pt-24 lg:pt-[136px] pb-6 lg:pb-8 flex flex-col justify-between"
+      className="fullscreen-section relative overflow-hidden bg-[#07152B] text-white pt-16 sm:pt-24 lg:pt-[136px] pb-4 sm:pb-6 lg:pb-8 flex flex-col justify-between"
     >
       {/* 1. Background Video / WaveCanvas / Poster Container */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
@@ -100,22 +100,22 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#07152B] via-[#07152B]/80 to-transparent md:hidden z-10 pointer-events-none" />
 
       {/* 3. Hero Main Content Container */}
-      <div className="container-main relative z-20 flex-1 flex flex-col justify-center py-6 lg:py-8">
-        <div className="max-w-xl lg:max-w-[560px] xl:max-w-[620px] space-y-5 sm:space-y-6 lg:space-y-8 text-left lg:-translate-x-[140px]">
+      <div className="container-main relative z-20 flex-1 flex flex-col justify-center py-4 sm:py-6 lg:py-8">
+        <div className="max-w-xl lg:max-w-[560px] xl:max-w-[620px] space-y-3.5 sm:space-y-6 lg:space-y-8 text-left lg:-translate-x-[140px]">
           {/* Top Label with Official Clarion Symbol */}
-          <div className="inline-flex items-center gap-2.5 bg-[#37B7FF]/10 px-3.5 py-1.5 rounded-full border border-[#37B7FF]/25">
+          <div className="inline-flex items-center gap-2.5 bg-[#37B7FF]/10 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full border border-[#37B7FF]/25">
             <img
               src="/brand/clarion-symbol.png"
               alt=""
-              className="h-[16px] sm:h-[18px] w-auto object-contain shrink-0"
+              className="h-[15px] sm:h-[18px] w-auto object-contain shrink-0"
             />
-            <span className="text-[11px] sm:text-xs font-mono font-bold tracking-widest text-[#37B7FF] uppercase">
+            <span className="text-[10px] sm:text-xs font-mono font-bold tracking-widest text-[#37B7FF] uppercase">
               CLARION · AI DATA CLOUD PLATFORM
             </span>
           </div>
 
           {/* Main Headline */}
-          <div className="space-y-1.5 sm:space-y-2">
+          <div className="space-y-1 sm:space-y-2">
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.15] text-white">
               <span className="block text-white">복잡한 기술을,</span>
               <span className="block text-[#37B7FF] pt-1">명확한 실행으로.</span>
@@ -123,24 +123,24 @@ export default function Hero() {
           </div>
 
           {/* English Sub Message */}
-          <div className="pt-1 sm:pt-2">
-            <div className="w-10 sm:w-12 h-1 bg-[#37B7FF] mb-2 sm:mb-3 rounded-full" />
+          <div className="pt-0.5 sm:pt-2">
+            <div className="w-10 sm:w-12 h-1 bg-[#37B7FF] mb-1.5 sm:mb-3 rounded-full" />
             <p className="text-xs sm:text-lg md:text-xl font-mono text-[#37B7FF] font-semibold tracking-normal sm:tracking-wide whitespace-nowrap sm:whitespace-normal">
               Technology for Clearer Decisions.
             </p>
           </div>
 
           {/* Action CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2 sm:pt-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4 pt-1 sm:pt-4">
             <a
               href="#portfolio"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 sm:px-8 sm:py-4 bg-[#1265E5] text-white font-bold text-sm sm:text-base rounded-xl shadow-lg shadow-blue-600/30 transition-all hover:bg-blue-600 hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-[#1265E5] text-white font-bold text-xs sm:text-base rounded-xl shadow-lg shadow-blue-600/30 transition-all hover:bg-blue-600 hover:-translate-y-0.5 active:translate-y-0"
             >
               <span>사업영역 살펴보기</span>
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 sm:px-8 sm:py-4 bg-white/10 text-white font-semibold text-sm sm:text-base backdrop-blur-md border border-white/30 rounded-xl transition-all hover:bg-white/20 hover:border-white/50 hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-white/10 text-white font-semibold text-xs sm:text-base backdrop-blur-md border border-white/30 rounded-xl transition-all hover:bg-white/20 hover:border-white/50 hover:-translate-y-0.5 active:translate-y-0"
             >
               <span>프로젝트 문의하기</span>
             </a>

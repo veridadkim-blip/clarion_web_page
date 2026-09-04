@@ -25,20 +25,21 @@ import {
   companyFacts
 } from '../data/companyContent'
 
-
 export default function Partners() {
-  // Check if any client or partner reference has been authorized for public display
   const approvedReferences = referenceGovernance.inventory.filter((item) => item.publicApproved)
 
   return (
     <>
+      {/* ========================================================= */}
+      {/* DESKTOP VIEWPORT LAYOUT (hidden lg:flex) — 100% FROZEN     */}
+      {/* ========================================================= */}
 
-      {/* 1. PROJECT EXPERIENCE MATRIX SECTION */}
+      {/* DESKTOP 1. PROJECT EXPERIENCE MATRIX SECTION */}
       <section
         id="track-record"
-        className="fullscreen-section bg-[#F8FAFC] text-[#142033] border-b border-clarion-line/60 relative overflow-hidden"
+        className="hidden lg:flex fullscreen-section bg-[#F8FAFC] text-[#142033] border-b border-clarion-line/60 relative overflow-hidden"
       >
-        <div className="container-main max-w-7xl lg:max-w-[1320px] space-y-6 lg:space-y-7 relative z-10 pt-20 lg:pt-24 pb-8 lg:pb-10 my-auto">
+        <div className="container-main max-w-7xl lg:max-w-[1320px] space-y-4 sm:space-y-6 lg:space-y-7 relative z-10 pt-16 sm:pt-20 lg:pt-24 pb-6 sm:pb-8 lg:pb-10 my-auto">
 
           {/* 1. Section Editorial Header */}
           <div className="border-b border-clarion-line/60 pb-4 lg:pb-5 text-left">
@@ -134,26 +135,6 @@ export default function Partners() {
                   ))}
                 </div>
               </div>
-
-              {/* Mobile Vertical Delivery Timeline Flow */}
-              <div className="lg:hidden space-y-3 relative py-2">
-                <div className="absolute top-4 bottom-4 left-3 w-[2px] bg-clarion-line/80 z-0" />
-                {projectExperience.deliveryLifecycle.map((item) => (
-                  <div
-                    key={item.key}
-                    className="relative z-10 cursor-pointer flex items-start gap-3.5 pl-1.5 text-left"
-                  >
-                    <div className="w-5 h-5 rounded-full bg-[#07152B] text-white flex items-center justify-center font-mono text-[10px] font-extrabold shrink-0 mt-0.5">
-                      {item.node}
-                    </div>
-                    <div className="space-y-0.5">
-                      <h4 className="text-xs font-extrabold text-[#142033]">{item.title}</h4>
-                      <p className="text-[11px] text-clarion-muted font-normal">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
             </div>
 
           </div>
@@ -180,12 +161,12 @@ export default function Partners() {
         </div>
       </section>
 
-      {/* 2. R&D CENTER + INTELLECTUAL PROPERTY VISUAL TECHNOLOGY EVIDENCE */}
+      {/* DESKTOP 2. R&D CENTER + INTELLECTUAL PROPERTY */}
       <section
         id="rnd-ip"
-        className="fullscreen-section bg-white text-[#142033] border-b border-clarion-line/60 relative overflow-hidden"
+        className="hidden lg:flex fullscreen-section bg-white text-[#142033] border-b border-clarion-line/60 relative overflow-hidden"
       >
-        <div className="container-main max-w-7xl lg:max-w-[1320px] space-y-5 lg:space-y-6 relative z-10 pt-20 lg:pt-24 pb-8 lg:pb-10 my-auto">
+        <div className="container-main max-w-7xl lg:max-w-[1320px] space-y-4 sm:space-y-5 lg:space-y-6 relative z-10 pt-16 sm:pt-20 lg:pt-24 pb-6 sm:pb-8 lg:pb-10 my-auto">
 
           {/* 1. Section Editorial Header */}
           <div className="border-b border-clarion-line/60 pb-4 lg:pb-5 text-left">
@@ -288,7 +269,7 @@ export default function Partners() {
                   </h4>
                 </div>
 
-                {/* Flat Horizontal Technology Flow Rail (No Individual Cards!) */}
+                {/* Flat Horizontal Technology Flow Rail */}
                 <div className="space-y-2.5 pt-1">
                   <div className="flex items-center justify-between">
                     <span className="text-[10px] font-mono font-bold text-white/60 uppercase tracking-wider">
@@ -297,10 +278,9 @@ export default function Partners() {
                     <span className="text-[10px] font-mono text-[#37B7FF]">NON-MEDICAL WELLNESS</span>
                   </div>
 
-                  {/* Desktop Horizontal Flow Rail */}
                   <div className="hidden sm:block relative py-2">
                     <div className="grid grid-cols-5 gap-2 relative z-10">
-                      {patentInfo.abstractFlow.map((item, idx) => (
+                      {patentInfo.abstractFlow.map((item) => (
                         <div
                           key={item.step}
                           className="flex flex-col items-center text-center space-y-1 px-1 py-1 border-r border-white/10 last:border-r-0"
@@ -317,22 +297,6 @@ export default function Partners() {
                         </div>
                       ))}
                     </div>
-                  </div>
-
-                  {/* Mobile Vertical Flow */}
-                  <div className="sm:hidden space-y-1.5 py-1">
-                    {patentInfo.abstractFlow.map((item) => (
-                      <div
-                        key={item.step}
-                        className="flex items-center justify-between text-xs border-b border-white/10 pb-1.5"
-                      >
-                        <div className="flex items-center gap-2">
-                          <span className="font-mono text-[10px] font-bold text-[#37B7FF]">{item.step}</span>
-                          <span className="font-bold text-white">{item.key}</span>
-                        </div>
-                        <span className="text-[10px] font-mono text-white/60">{item.desc}</span>
-                      </div>
-                    ))}
                   </div>
                 </div>
 
@@ -351,13 +315,12 @@ export default function Partners() {
         </div>
       </section>
 
-      {/* 3. ECOSYSTEM & REFERENCE GOVERNANCE LAYER (STEP 4) */}
-      <section className="bg-white py-12 lg:py-20">
-        <div className="container-main max-w-7xl lg:max-w-[1320px] space-y-8">
+      {/* DESKTOP 3. ECOSYSTEM & REFERENCE GOVERNANCE LAYER */}
+      <section className="hidden lg:flex fullscreen-section bg-white text-[#142033] border-b border-clarion-line/60 relative overflow-hidden">
+        <div className="container-main max-w-7xl lg:max-w-[1320px] space-y-5 sm:space-y-8 relative z-10 pt-16 sm:pt-20 lg:py-20 pb-6 sm:pb-10 my-auto">
           
-          {/* Layer Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-clarion-line/40 pb-6">
-            <div className="space-y-2">
+            <div className="space-y-2 text-left">
               <span className="inline-block px-3 py-0.5 bg-[#1265E5]/10 text-[#1265E5] font-mono font-bold text-xs tracking-widest uppercase rounded-full border border-[#1265E5]/20">
                 {referenceGovernance.labelEn}
               </span>
@@ -371,7 +334,6 @@ export default function Partners() {
             </div>
           </div>
 
-          {/* Ecosystem Architecture Stream Diagram */}
           <div className="bg-white rounded-2xl p-5 sm:p-6 border border-clarion-line/60 shadow-xs space-y-4">
             <div className="flex items-center justify-between border-b border-clarion-line/40 pb-2">
               <span className="text-xs font-mono font-extrabold text-[#1265E5] uppercase tracking-wider">
@@ -406,7 +368,6 @@ export default function Partners() {
             </div>
           </div>
 
-          {/* Sector Governance Cards Grid (Seamless Fallback to Approved Companies) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
             {referenceGovernance.categorySectors.map((sector) => {
               const approvedMatch = approvedReferences.find((ref) => ref.categoryFallback === sector.code)
@@ -414,7 +375,7 @@ export default function Partners() {
               return (
                 <div
                   key={sector.code}
-                  className="bg-white p-4 sm:p-5 rounded-2xl border border-clarion-line/60 shadow-xs space-y-3 hover:border-[#1265E5]/40 transition-all flex flex-col justify-between"
+                  className="bg-white p-4 sm:p-5 rounded-2xl border border-clarion-line/60 shadow-xs space-y-3 hover:border-[#1265E5]/40 transition-all flex flex-col justify-between text-left"
                 >
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
@@ -440,7 +401,6 @@ export default function Partners() {
                     </p>
                   </div>
 
-                  {/* Scopes */}
                   <div className="pt-2 border-t border-clarion-line/40 flex flex-wrap gap-1">
                     {sector.scopes.map((scope) => (
                       <span
@@ -457,14 +417,187 @@ export default function Partners() {
           </div>
 
         </div>
+      </section>
 
+      {/* ========================================================= */}
+      {/* MOBILE ONLY SLIDES (lg:hidden) — STRICT ONE SCREEN SLIDE SYSTEM */}
+      {/* ========================================================= */}
+
+      {/* MOBILE SLIDE 1 (#track-record) — INDUSTRY EXPERIENCE LANDSCAPE */}
+      <section id="track-record" className="lg:hidden fullscreen-section bg-[#F8FAFC] text-[#142033] border-b border-clarion-line/60">
+        <div className="container-main max-w-7xl h-full flex flex-col justify-between py-4 text-left">
+          {/* Top Label */}
+          <div>
+            <span className="inline-flex items-center gap-2 text-[#1265E5] font-mono font-bold text-[10px] tracking-widest uppercase border-b-2 border-[#1265E5] pb-0.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#1265E5]" />
+              PROJECT EXPERIENCE · INDUSTRY SECTORS
+            </span>
+          </div>
+
+          {/* Headline */}
+          <div className="space-y-1">
+            <h2 className="text-xl font-extrabold text-[#142033] leading-tight tracking-tight">
+              현장에서 쌓인 실행력이,<br />
+              <span className="text-[#1265E5]">다음 기술의 기반이 됩니다.</span>
+            </h2>
+          </div>
+
+          {/* 5 Industry Sectors Grid */}
+          <div className="grid grid-cols-2 gap-2 my-auto py-1">
+            {referenceGovernance.categorySectors.map((sector) => (
+              <div key={sector.code} className="p-2.5 bg-white rounded-lg border border-clarion-line/70 space-y-0.5">
+                <span className="text-[10px] font-mono font-bold text-[#1265E5] block">{sector.code}</span>
+                <h3 className="text-xs font-extrabold text-[#142033] leading-tight">{sector.title}</h3>
+                <p className="text-[10px] font-mono text-clarion-muted truncate">{sector.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="pt-2 border-t border-clarion-line/40 flex items-center justify-between text-[10px] font-mono">
+            <span className="text-clarion-muted">FINANCIAL & ENTERPRISE IT</span>
+            <span className="text-[#1265E5] font-bold">SLIDE 1/2 ➔</span>
+          </div>
+        </div>
+      </section>
+
+      {/* MOBILE SLIDE 2 (#track-record-delivery) — DELIVERY TIMELINE RAIL */}
+      <section id="track-record-delivery" className="lg:hidden fullscreen-section bg-[#07152B] text-white border-b border-white/10">
+        <div className="container-main max-w-7xl h-full flex flex-col justify-between py-4 text-left">
+          {/* Top Label */}
+          <div className="flex items-center justify-between border-b border-white/10 pb-1.5">
+            <span className="text-[10px] font-mono font-bold text-[#37B7FF] uppercase tracking-wider">
+              PROJECT DELIVERY METHODOLOGY
+            </span>
+            <span className="text-[9px] font-mono text-white/50">SLIDE 2/2</span>
+          </div>
+
+          {/* 5-Step Delivery Flow */}
+          <div className="space-y-2.5 my-auto py-1">
+            {projectExperience.deliveryLifecycle.map((item) => (
+              <div key={item.key} className="p-2.5 bg-white/5 rounded-lg border border-white/10 flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-[#1265E5] text-white flex items-center justify-center font-mono text-[10px] font-extrabold shrink-0 mt-0.5">
+                  {item.node}
+                </div>
+                <div className="space-y-0.5">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-mono font-bold text-[#37B7FF]">{item.key}</span>
+                    <h4 className="text-xs font-extrabold text-white">{item.title}</h4>
+                  </div>
+                  <p className="text-[11px] text-white/70 leading-snug">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="pt-2">
+            <a
+              href="#contact"
+              className="w-full py-2.5 bg-[#1265E5] text-white font-bold text-xs rounded-lg flex items-center justify-center gap-1.5 shadow-sm"
+            >
+              <span>프로젝트 수행 문의하기</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* MOBILE SLIDE 3 (#rnd-ip) — R&D CENTER & PATENT PENDING EVIDENCE */}
+      <section id="rnd-ip" className="lg:hidden fullscreen-section bg-white text-[#142033] border-b border-clarion-line/60">
+        <div className="container-main max-w-7xl h-full flex flex-col justify-between py-4 text-left">
+          {/* Top Label */}
+          <div>
+            <span className="inline-flex items-center gap-2 text-[#1265E5] font-mono font-bold text-[10px] tracking-widest uppercase border-b-2 border-[#1265E5] pb-0.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#1265E5]" />
+              R&D / IP · TECHNOLOGY ASSETS
+            </span>
+          </div>
+
+          {/* Middle R&D Office Photo + Patent Summary */}
+          <div className="space-y-3 my-auto py-1">
+            {/* R&D Office Image Box */}
+            <div className="relative rounded-lg overflow-hidden border border-clarion-line/80 h-[22vh] max-h-[160px]">
+              <img
+                src={rndCenterInfo.image}
+                alt="(주)클라리온 기업부설연구소 실제 사무실 전경"
+                className="w-full h-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#07152B]/85 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-2 left-2.5 right-2.5 text-white flex items-center justify-between z-10">
+                <span className="text-[10px] font-mono font-bold text-white bg-black/60 backdrop-blur-md px-2 py-0.5 rounded">
+                  기업부설연구소 (KOITA 인정)
+                </span>
+                <span className="text-[9px] font-mono text-white/80">인정번호 {rndCenterInfo.recognitionNo}</span>
+              </div>
+            </div>
+
+            {/* Patent Pending Box */}
+            <div className="p-3 bg-[#07152B] text-white rounded-lg border border-white/15 space-y-1.5">
+              <div className="flex items-center justify-between text-[10px] font-mono border-b border-white/10 pb-1">
+                <span className="font-extrabold text-[#37B7FF]">PATENT PENDING</span>
+                <span className="text-white/60">출원번호 {patentInfo.applicationNo}</span>
+              </div>
+              <h4 className="text-xs font-extrabold text-white leading-tight">
+                {patentInfo.title}
+              </h4>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="pt-2 border-t border-clarion-line/40 flex items-center justify-between text-[10px] font-mono text-clarion-muted">
+            <span>KOITA RECOGNIZED & PATENT FILED</span>
+            <span className="font-extrabold text-[#142033]">2026 IP ASSETS</span>
+          </div>
+        </div>
+      </section>
+
+      {/* MOBILE SLIDE 4 (#governance) — ECOSYSTEM & GOVERNANCE */}
+      <section id="governance" className="lg:hidden fullscreen-section bg-[#F8FAFC] text-[#142033] border-b border-clarion-line/60">
+        <div className="container-main max-w-7xl h-full flex flex-col justify-between py-4 text-left">
+          {/* Top Header */}
+          <div className="flex items-center justify-between border-b border-clarion-line/40 pb-1.5">
+            <span className="text-[10px] font-mono font-bold text-[#1265E5] uppercase tracking-wider">
+              ECOSYSTEM GOVERNANCE
+            </span>
+            <div className="flex items-center gap-1 text-[9px] font-mono text-clarion-muted">
+              <Lock className="w-3 h-3 text-[#1265E5]" />
+              <span>ACTIVE</span>
+            </div>
+          </div>
+
+          {/* 3 Flow Nodes */}
+          <div className="space-y-2 my-auto py-1">
+            <h3 className="text-base font-extrabold text-[#142033] leading-tight">
+              책임 있는 거버넌스로,<br />
+              <span className="text-[#1265E5]">생태계와 협업합니다.</span>
+            </h3>
+
+            <div className="space-y-1.5 pt-1">
+              <div className="p-2.5 bg-white rounded-lg border border-clarion-line/60 flex items-center justify-between">
+                <span className="text-[10px] font-mono font-bold text-[#1265E5]">01 CLOUD IT ECOSYSTEM</span>
+                <span className="text-xs font-extrabold text-[#142033]">Cloud IT 생태계</span>
+              </div>
+
+              <div className="p-2.5 bg-[#07152B] text-white rounded-lg border border-white/10 flex items-center justify-between">
+                <span className="text-[10px] font-mono font-bold text-[#37B7FF]">02 CLARION DELIVERY</span>
+                <span className="text-xs font-extrabold text-white">시스템 통합 엔진</span>
+              </div>
+
+              <div className="p-2.5 bg-white rounded-lg border border-clarion-line/60 flex items-center justify-between">
+                <span className="text-[10px] font-mono font-bold text-[#1265E5]">03 FINANCIAL & ENTERPRISE</span>
+                <span className="text-xs font-extrabold text-[#142033]">금융·기업 프로젝트</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="pt-2 border-t border-clarion-line/40 flex items-center justify-between text-[10px] font-mono text-clarion-muted">
+            <span>REFERENCE GOVERNANCE</span>
+            <a href="#contact" className="text-[#1265E5] font-bold">문의하기 ➔</a>
+          </div>
+        </div>
       </section>
     </>
   )
 }
-
-
-
-
-
-

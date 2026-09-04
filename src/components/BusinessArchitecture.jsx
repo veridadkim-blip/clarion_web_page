@@ -50,43 +50,43 @@ export default function BusinessArchitecture() {
 
   return (
     <section id="portfolio" className="fullscreen-section bg-[#F8FAFC] border-b border-clarion-line transition-colors duration-700">
-      <div className="container-main max-w-7xl lg:max-w-[1280px] space-y-5 lg:space-y-6 pt-20 lg:pt-24 pb-8 lg:pb-10 my-auto">
+      <div className="container-main max-w-7xl lg:max-w-[1280px] space-y-2.5 sm:space-y-5 lg:space-y-6 pt-1 sm:pt-20 lg:pt-24 pb-2 sm:pb-8 lg:pb-10 my-auto">
 
         {/* 1. Clean Section Editorial Header */}
-        <div className="border-b border-clarion-line/60 pb-4 lg:pb-5 text-left">
-          <span className="inline-flex items-center gap-2 text-[#1265E5] font-mono font-bold text-xs tracking-widest uppercase border-b-2 border-[#1265E5] pb-0.5 mb-2 lg:mb-2.5">
+        <div className="border-b border-clarion-line/60 pb-2 sm:pb-4 lg:pb-5 text-left">
+          <span className="inline-flex items-center gap-2 text-[#1265E5] font-mono font-bold text-xs tracking-widest uppercase border-b-2 border-[#1265E5] pb-0.5 mb-1.5 lg:mb-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#1265E5]" />
             BUSINESS PORTFOLIO · EVOLUTION ROADMAP
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#142033] leading-tight tracking-tight pt-1">
+          <h2 className="text-2xl sm:text-4xl lg:text-[44px] font-extrabold text-[#142033] leading-tight tracking-tight pt-0.5">
             검증된 실행력에서, <span className="text-[#1265E5]">미래 기술로.</span>
           </h2>
         </div>
 
         {/* 2. Horizontal Evolution Roadmap Rail (Flat, Line-based) */}
-        <div className="relative pt-1 pb-1">
-          <div className="grid grid-cols-3 gap-4 border-b-2 border-clarion-line/60 pb-3.5">
+        <div className="relative pt-0.5 pb-0.5">
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 border-b-2 border-clarion-line/60 pb-2 sm:pb-3.5">
             {portfolioStories.map((s) => {
               const isActive = activeTab === s.id
               return (
                 <button
                   key={s.id}
                   onClick={() => setActiveTab(s.id)}
-                  className={`flex items-center justify-between p-2.5 sm:p-3 border-l-3 transition-all duration-300 text-left ${
+                  className={`flex items-center justify-between p-1.5 sm:p-3 border-l-3 transition-all duration-300 text-left ${
                     isActive
                       ? 'border-[#1265E5] text-[#142033]'
                       : 'border-slate-200 text-[#68758A] hover:text-[#142033] hover:border-slate-400'
                   }`}
                 >
-                  <div className="flex items-center gap-3">
-                    <span className={`text-xs font-mono font-bold ${isActive ? 'text-[#1265E5]' : 'text-clarion-muted'}`}>
+                  <div className="flex items-center gap-1.5 sm:gap-3">
+                    <span className={`text-[10px] sm:text-xs font-mono font-bold ${isActive ? 'text-[#1265E5]' : 'text-clarion-muted'}`}>
                       {s.num}
                     </span>
                     <div>
-                      <span className={`text-[11px] font-mono font-bold tracking-wider block uppercase ${isActive ? 'text-[#1265E5]' : 'text-clarion-muted'}`}>
+                      <span className={`text-[9px] sm:text-[11px] font-mono font-bold tracking-wider block uppercase ${isActive ? 'text-[#1265E5]' : 'text-clarion-muted'}`}>
                         {s.phase}
                       </span>
-                      <span className={`text-sm sm:text-base ${isActive ? 'font-extrabold text-[#142033]' : 'font-semibold text-[#68758A]'}`}>
+                      <span className={`text-xs sm:text-base ${isActive ? 'font-extrabold text-[#142033]' : 'font-semibold text-[#68758A]'}`}>
                         {s.stageTitle}
                       </span>
                     </div>
@@ -98,28 +98,28 @@ export default function BusinessArchitecture() {
         </div>
 
         {/* 3. Dark Business Canvas Frame (Unified, No Layout Jump) */}
-        <div className="bg-[#07152B] rounded-xl border border-[#1265E5]/30 text-white p-7 sm:p-9 shadow-lg relative overflow-hidden min-h-[370px] lg:min-h-[400px] flex flex-col justify-between">
+        <div className="bg-[#07152B] rounded-xl border border-[#1265E5]/30 text-white p-3.5 sm:p-7 lg:p-9 shadow-lg relative overflow-hidden min-h-[180px] sm:min-h-[370px] lg:min-h-[400px] flex flex-col justify-between">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-center">
             
             {/* Left Content Area (5 Cols) */}
-            <div className="lg:col-span-5 space-y-4 text-left">
-              <div className="space-y-1.5">
-                <span className="text-xs font-mono font-extrabold text-[#37B7FF] tracking-widest uppercase block">
+            <div className="lg:col-span-5 space-y-2 sm:space-y-4 text-left">
+              <div className="space-y-1">
+                <span className="text-[10px] sm:text-xs font-mono font-extrabold text-[#37B7FF] tracking-widest uppercase block">
                   PHASE {currentStory.num} · {currentStory.phase}
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">{currentStory.title}</h3>
+                <h3 className="text-lg sm:text-3xl font-extrabold text-white leading-tight">{currentStory.title}</h3>
               </div>
 
-              <p className="text-base sm:text-lg font-bold text-[#37B7FF] leading-snug">
+              <p className="text-xs sm:text-lg font-bold text-[#37B7FF] leading-snug">
                 "{currentStory.slogan}"
               </p>
 
-              <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-normal">
+              <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-normal hidden sm:block">
                 {currentStory.desc}
               </p>
 
-              <div className="pt-1 border-t border-white/10">
+              <div className="pt-1 border-t border-white/10 hidden sm:block">
                 <p className="text-xs font-mono text-white/70">
                   <span className="font-bold text-[#37B7FF]">CORE DOMAINS:</span> {currentStory.keywords.join('  /  ')}
                 </p>
@@ -127,7 +127,7 @@ export default function BusinessArchitecture() {
             </div>
 
             {/* Right Side — Business System Flow Visual (7 Cols) */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 hidden sm:block">
               {activeTab === 'now' && (
                 <div className="bg-slate-900/60 rounded-xl border border-white/10 p-6 space-y-6 text-left">
                   <div className="flex items-center justify-between text-xs font-mono text-[#37B7FF] border-b border-white/10 pb-3">

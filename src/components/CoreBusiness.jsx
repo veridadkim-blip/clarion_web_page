@@ -57,10 +57,10 @@ export default function CoreBusiness() {
 
   return (
     <section id="core-business" className="fullscreen-section bg-[#F8FAFC] border-b border-clarion-line/40 text-[#142033] relative overflow-hidden">
-      <div className="container-main max-w-7xl lg:max-w-[1320px] space-y-6 lg:space-y-7 relative z-10 pt-14 lg:pt-[64px] pb-6 lg:pb-8 my-auto">
+      <div className="container-main max-w-7xl lg:max-w-[1320px] space-y-4 sm:space-y-6 lg:space-y-7 relative z-10 pt-16 sm:pt-14 lg:pt-[64px] pb-6 lg:pb-8 my-auto">
         
         {/* 1. Section Header (Scaled Headline & Higher Contrast Supporting Copy) */}
-        <div className="border-b border-clarion-line/60 pb-4 lg:pb-5 text-left">
+        <div className="border-b border-clarion-line/60 pb-3 sm:pb-4 lg:pb-5 text-left">
           <span className="inline-flex items-center gap-2 text-[#1265E5] font-mono font-bold text-xs tracking-widest uppercase border-b-2 border-[#1265E5] pb-0.5 mb-2 lg:mb-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#1265E5]" />
             CORE BUSINESS · EXECUTION ARCHITECTURE
@@ -68,13 +68,13 @@ export default function CoreBusiness() {
           <h2 className="text-3xl sm:text-5xl lg:text-[48px] font-extrabold text-[#142033] leading-tight tracking-tight pt-1">
             현장에서 검증되는 <span className="text-[#1265E5]">엔터프라이즈 IT 실행력.</span>
           </h2>
-          <p className="text-sm sm:text-base text-[#334155] font-semibold leading-[1.52] pt-3 lg:pt-3.5">
+          <p className="text-sm sm:text-base text-[#334155] font-semibold leading-[1.52] pt-2 sm:pt-3 lg:pt-3.5">
             금융·보험 IT와 대형 엔터프라이즈 환경을 아우르는 클라리온의 6단계 수행 아키텍처입니다.
           </p>
         </div>
 
         {/* 2. PRIMARY ARCHITECTURE CANVAS (Expanded Width & Scaled Architecture Rail) */}
-        <div className="py-2 space-y-6 relative text-left">
+        <div className="py-1 sm:py-2 space-y-4 sm:space-y-6 relative text-left">
           
           {/* Architecture Header Indicator */}
           <div className="flex items-center justify-between border-b border-clarion-line/40 pb-2.5">
@@ -148,8 +148,8 @@ export default function CoreBusiness() {
           </div>
 
           {/* Mobile Vertical Architecture Flow */}
-          <div className="lg:hidden space-y-3 relative py-2">
-            <div className="absolute top-4 bottom-4 left-3 w-[2px] bg-clarion-line/80 z-0" />
+          <div className="lg:hidden space-y-1.5 relative py-1">
+            <div className="absolute top-3 bottom-3 left-3 w-[2px] bg-clarion-line/80 z-0" />
 
             {archNodes.map((node) => {
               const isSelected = activeNode.id === node.id
@@ -157,20 +157,20 @@ export default function CoreBusiness() {
                 <div
                   key={node.id}
                   onClick={() => setActiveNode(node)}
-                  className="relative z-10 cursor-pointer flex items-start gap-3.5 pl-1.5 text-left"
+                  className="relative z-10 cursor-pointer flex items-center gap-3 pl-1 text-left"
                 >
                   <div
-                    className={`w-5 h-5 rounded-full flex items-center justify-center font-mono text-[10px] font-extrabold shrink-0 mt-0.5 ${
+                    className={`w-5 h-5 rounded-full flex items-center justify-center font-mono text-[10px] font-extrabold shrink-0 ${
                       isSelected ? 'bg-[#1265E5] text-white ring-2 ring-[#1265E5]/30' : 'bg-white border-2 border-clarion-line text-clarion-muted'
                     }`}
                   >
                     {node.step}
                   </div>
-                  <div className="space-y-0.5">
+                  <div className="flex items-center justify-between flex-1 pr-1">
                     <h3 className={`text-xs font-extrabold ${isSelected ? 'text-[#1265E5]' : 'text-[#142033]'}`}>
                       {node.title}
                     </h3>
-                    <p className="text-[11px] text-clarion-muted font-normal">{node.desc}</p>
+                    <span className="text-[10px] font-mono text-clarion-muted truncate max-w-[150px]">{node.subTitle}</span>
                   </div>
                 </div>
               )

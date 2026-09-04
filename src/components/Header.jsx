@@ -30,7 +30,7 @@ export default function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-clarion-line/80 py-3'
-          : 'bg-gradient-to-b from-[#07152B]/90 via-[#07152B]/60 to-transparent pt-5 lg:pt-[28px] pb-4'
+          : 'bg-gradient-to-b from-[#07152B]/90 via-[#07152B]/60 to-transparent py-3 lg:pt-[28px] lg:pb-4'
       }`}
     >
       <div className="container-main">
